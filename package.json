@@ -1,0 +1,26 @@
+{
+  "name": "pomodoro-project",
+  "version": "1.0.0",
+  "description": "자스민 수업의 마지막 프로젝트로 포모도로 타이머를 만들 예정임.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaeguDude/pomodoro-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaeguDude/pomodoro-project/issues"
+  },
+  "homepage": "https://github.com/DaeguDude/pomodoro-project#readme",
+  "dependencies": {
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1"
+  }
+}
