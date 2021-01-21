@@ -19,7 +19,6 @@ body {
 .task {
   margin: 0 auto;
   width: 480px;
-  height: 200px;
   border: 1px solid white;
 }
 
@@ -27,7 +26,7 @@ body {
   height: 48px;
   padding-bottom: 14px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .task header div {
@@ -48,4 +47,47 @@ body {
   background: none rgba(255, 255, 255, 0.2);
   width: 32px;
   padding: 8px;
+}
+
+.task-item {
+  background-color: white;
+  height: 62px;
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 8px;
+  border-left: 6px solid transparent;
+}
+
+.task-item:hover {
+  border-left: 6px solid rgb(204, 204, 204);
+}
+
+.task-item--focus {
+  border-left: 6px solid rgb(34, 34, 34);
+}
+
+.task-item:first-child {
+  margin-top: 0;
+}
+
+.task-item:last-child {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+/* Add Task Btn */
+.task-item:last-child:hover {
+  opacity: 1;
+}
+
+/* FOOTER */
+
+.task footer {
+  height: 68px;
+  padding: 20px 12px;
+  margin-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.1);
 }
