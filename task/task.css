@@ -10,6 +10,25 @@ body {
     "Segoe UI Symbol";
 }
 
+/*** stylings for tags ***/
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
+/*** UTILITY CLASSES ***/
+.edit-btn {
+  border-radius: 4px;
+  background: none rgba(255, 255, 255, 0.2);
+  width: 32px;
+  padding: 8px;
+  color: white;
+}
+
+/*** Task Section Container ***/
 .container {
   height: 100vh;
   background: rgb(219, 82, 77);
@@ -42,47 +61,96 @@ body {
   color: white;
 }
 
-.edit-btn {
-  border-radius: 4px;
-  background: none rgba(255, 255, 255, 0.2);
-  width: 32px;
-  padding: 8px;
-}
-
 .task-item {
   background-color: white;
-  height: 62px;
+  min-height: 62px;
   width: 100%;
   border-radius: 4px;
   margin-top: 8px;
   border-left: 6px solid transparent;
+  cursor: pointer;
 }
 
 .task-item:hover {
   border-left: 6px solid rgb(204, 204, 204);
 }
 
-.task-item--focus {
-  border-left: 6px solid rgb(34, 34, 34);
-}
-
 .task-item:first-child {
   margin-top: 0;
 }
 
-.task-item:last-child {
+.task-item--focus {
+  border-left: 6px solid rgb(34, 34, 34);
+}
+
+/*** Task Info(individual task) ***/
+.task-info {
+  display: flex;
+}
+
+.task-info__left {
+  padding: 18px 14px;
+  border: 1px solid black;
+
+  flex: 3 0 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.task-info__check-marker {
+  font-size: 24px;
+  color: rgb(223, 223, 223);
+  margin-right: 10px;
+}
+
+.task-info__check-marker:hover {
+  opacity: 0.6;
+}
+
+.task-info__check-marker--completed {
+  color: rgb(219, 82, 77);
+}
+
+.task-info__title {
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+}
+
+.task-info__title--completed {
+  color: rgb(187, 187, 187);
+  text-decoration: line-through;
+}
+
+.task-info__right {
+  flex: 1 0 0;
+  border: 1px solid black;
+}
+
+/*** Add Task Btn ***/
+.add-task {
   background-color: rgba(0, 0, 0, 0.1);
   opacity: 0.8;
   border: 2px dashed rgba(255, 255, 255, 0.4);
   border-radius: 8px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-/* Add Task Btn */
-.task-item:last-child:hover {
+.add-task:hover {
+  border: 2px dashed rgba(255, 255, 255, 0.4);
   opacity: 1;
 }
 
-/* FOOTER */
+.add-task i {
+  margin-right: 8px;
+}
+
+/*** FOOTER ***/
 
 .task footer {
   height: 68px;

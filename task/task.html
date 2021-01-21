@@ -6,6 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="task.css" />
+    <script
+      src="https://kit.fontawesome.com/fadac8530c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -13,16 +17,29 @@
         <header>
           <div>
             <h3 class="title">Tasks</h3>
-            <div class="edit-btn"></div>
+            <button class="edit-btn">
+              <i class="fas fa-ellipsis-v"></i>
           </div>
         </header>
 
         <article>
+          <div class="task-item task-info">
+            <div class="task-info__left">
+              <i class="task-info__check-marker fas fa-check-circle"></i>
+              <span class="task-info__title">OhmygodOhmyOhmygodOhmyOhmygodOhmyOhmy
+                godOhmyOhmygodOhmyOhmygodOhmy</span>
+            </div>
+            <div class="task-info__right">
+              <div></div>
+              <div></div>
+            </div>
+          </div>
           <div class="task-item"></div>
           <div class="task-item"></div>
-
-          <div class="task-item task-item--focus"></div>
-          <div class="task-item"></div>
+          <button class="task-item add-task">
+            <i class="fas fa-plus-circle"></i>
+            <span>Add Task</span>
+          </button>
         </article>
 
         <footer>
