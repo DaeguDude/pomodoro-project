@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+input[type="checkbox"] + label {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 21px;
+    border-radius: 10px;
+    background-color: #666;
+    /*
+    vertical-align: top;
+    overflow: hidden;
+    color: transparent;
+*/
+}
+
+input[type="checkbox"] + label:after {
+    position: absolute;
+    content: '';
+    top: 1px;
+    left: 1px;
+    width: 19px;
+    height: 19px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: #62a7ee;
+}
+
+input[type="checkbox"]:checked + label:after {
+    left: auto;
+    right:1px;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+/*
+    overflow:hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0,0,0,0);
+*/
+    opacity: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
