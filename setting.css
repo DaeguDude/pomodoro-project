@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 21px;
+  border-radius: 10px;
+  background-color: #666;
+  /*
+    vertical-align: top;
+    overflow: hidden;
+    color: transparent;
+*/
+}
+
+input[type="checkbox"] + label:after {
+  position: absolute;
+  content: "";
+  top: 1px;
+  left: 1px;
+  width: 19px;
+  height: 19px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: #62a7ee;
+}
+
+input[type="checkbox"]:checked + label:after {
+  left: auto;
+  right: 1px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  /*
+    overflow:hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0,0,0,0);
+*/
+  opacity: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal__open-btn {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.9;
+  background: none rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  margin-left: 10px;
+  font-size: 13px;
+  padding: 8px 12px;
+  min-width: 70px;
+  border: none;
+  color: white !important;
+}
+
+button {
+  /* -webkit-writing-mode: horizontal-tb !important; */
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: center;
+  cursor: default;
+  font: 400 13.3333px Arial;
+}
+
+button,
+input,
+textarea {
+  font-family: "ArialRounded", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+.btn-img {
+  width: 16px;
+}
+
+body {
+  background-color: rgb(219, 82, 77);
+}

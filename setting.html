@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting</title>
+    <link rel="stylesheet" href="setting.css" />
+  </head>
+  <body>
+    <button type="button" id="modal__open-btn">
+      <img src="config-white.png" alt="config icon" class="btn-img" />
+      &nbsp;Setting
+    </button>
+
+    <div class="modal">
+      <div class="modal-content">
+        <div class="setting">
+          <header>
+            <div>Timer Setting</div>
+            <img
+              src="remove-black-sm.png"
+              alt="remove icon"
+              class="setting__remove-btn btn-img"
+            />
+          </header>
+          <article>
+            <div class="time">
+              <div class="time__title">Time (minutes)</div>
+              <div class="time__items">
+                <label>Pomodoro</label>
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  class="time__pomodoro"
+                  value="1"
+                />
+              </div>
+
+              <div class="time__items">
+                <label>Short Break</label>
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  class="time__shortBreak"
+                  value="5"
+                />
+              </div>
+
+              <div class="time__items">
+                <label>Long Break</label>
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  class="time__longBreak"
+                  value="15"
+                />
+              </div>
+            </div>
+
+            <div class="autoStart">
+              <div class="autoStart__title">
+                <span>Auto start next round?</span>
+              </div>
+              <div>
+                <input type="checkBox" id="autoStart__checkBox" name="" />
+                <label for="autoStart__checkBox"></label>
+              </div>
+            </div>
+
+            <div class="volume">
+              <div class="volume__title">
+                <span>Sound Volume</span>
+              </div>
+              <div>
+                <div class="volume__display">50</div>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  class="volume__range"
+                  value="50"
+                />
+              </div>
+            </div>
+
+            <div class="longBreakInterval">
+              <div class="longBreakInterval__title">
+                <span>Long Break Interval</span>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  min="1"
+                  step="1"
+                  width="70"
+                  class="longBreakInterval__number"
+                  value="4"
+                />
+              </div>
+            </div>
+          </article>
+          <footer class="footer">
+            <button type="submit" class="setting__submit-btn">OK</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="setting.js"></script>
+</html>
