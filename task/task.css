@@ -66,9 +66,11 @@ button:active {
   min-height: 62px;
   width: 100%;
   border-radius: 4px;
-  margin-top: 8px;
+  margin-bottom: 8px;
   border-left: 6px solid transparent;
   cursor: pointer;
+
+  display: flex;
 }
 
 .task-item:hover {
@@ -85,50 +87,81 @@ button:active {
 
 /*** Task Info(individual task) ***/
 .task-info {
+  width: 100%;
   display: flex;
 }
 
-.task-info__left {
+.task-item__left {
   padding: 18px 14px;
-  border: 1px solid black;
+  max-width: 80%;
 
-  flex: 3 0 0;
+  flex: 1 0 0;
 
   display: flex;
   align-items: center;
 }
 
-.task-info__check-marker {
+.task-item__check-marker {
   font-size: 24px;
   color: rgb(223, 223, 223);
   margin-right: 10px;
 }
 
-.task-info__check-marker:hover {
+.task-item__check-marker:hover {
   opacity: 0.6;
 }
 
-.task-info__check-marker--completed {
+.task-item__check-marker--completed {
   color: rgb(219, 82, 77);
 }
 
-.task-info__title {
+.task-item__title {
   color: rgb(85, 85, 85);
   font-weight: bold;
+  width: 85%;
+  flex: 1 0 0;
+  overflow-wrap: break-word;
 }
 
-.task-info__title--completed {
+.task-item__title--completed {
   color: rgb(187, 187, 187);
   text-decoration: line-through;
 }
 
-.task-info__right {
-  flex: 1 0 0;
-  border: 1px solid black;
+.task-item__right {
+  width: 20%;
+  flex: 0 0 auto;
+  color: #bbb;
+
+  display: flex;
+  align-items: center;
+}
+
+.task-item__right div {
+  width: 40px;
+  height: 20px;
+  margin-right: 18px;
+  font-weight: bold;
+}
+
+.task-item__right .edit-btn {
+  width: 30px;
+  height: 30px;
+  padding: 2px 4px;
+  color: #555;
+  border: 1px solid rgb(223, 223, 223);
+}
+
+.task-item__right .edit-btn:hover {
+  background: rgb(223, 223, 223);
 }
 
 /*** Add Task Btn ***/
-.add-task {
+.add-task__add-btn {
+  min-height: 62px;
+  width: 100%;
+  margin-bottom: 8px;
+  cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
   opacity: 0.8;
   border: 2px dashed rgba(255, 255, 255, 0.4);
@@ -141,21 +174,136 @@ button:active {
   color: white;
 }
 
-.add-task:hover {
+.add-task__add-btn:hover {
   border: 2px dashed rgba(255, 255, 255, 0.4);
   opacity: 1;
 }
 
-.add-task i {
+.add-task .fa-plus-circle {
   margin-right: 8px;
 }
 
 /*** FOOTER ***/
 
-.task footer {
+/* .task footer {
   height: 68px;
   padding: 20px 12px;
   margin-top: 28px;
   border-top: 1px solid rgba(255, 255, 255, 0.8);
   background-color: rgba(255, 255, 255, 0.1);
+} */
+
+/* TASK DETAIL CARD */
+
+.task-detail {
+  width: 480px;
+  height: 277px;
+
+  background-color: white;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.task-detail__content {
+  padding: 18px 20px 18px;
+  flex: 1 0 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.task-detail__title-container {
+  padding: 8px 0;
+  height: 61px;
+  border: 1px solid black;
+}
+
+.task-detail__title {
+  border-radius: 4px;
+  font-size: 22px;
+  padding: 10px 0px;
+  box-shadow: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.task-detail__pomodoro-container {
+  padding: 8px 0;
+  height: 82px;
+  border: 1px solid black;
+}
+
+.label {
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+}
+
+.task-detail__note-container {
+  padding: 8px 0;
+  height: 34px;
+  border: 1px solid black;
+}
+
+.task-detail__add-note-btn {
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 14px;
+  background: none;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.task-detail footer {
+  background-color: rgb(239, 239, 239);
+  padding: 14px 20px;
+  height: 62px;
+  border-radius: 0 0 8px 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.task-detail__cancel-btn {
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 14px;
+  padding: 8px 12px;
+  min-width: 70px;
+  margin-right: 14px;
+  background: none;
+  border: none;
+  color: rgb(136, 136, 136);
+  font-weight: bold;
+}
+
+.task-detail__cancel-btn:hover {
+  opacity: 1;
+  color: rgb(128, 128, 128);
+}
+
+.task-detail__save-btn {
+  cursor: pointer;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
+  color: white;
+  opacity: 0.9;
+  font-size: 14px;
+  padding: 10px 12px;
+  min-width: 70px;
+  border-radius: 4px;
+  background-color: rgb(171, 171, 171);
+}
+
+.task-detail__save-btn--enabled {
+  background-color: rgb(34, 34, 34);
+}
+
+.task-detail__save-btn--enabled:hover {
+  opacity: 1;
 }
