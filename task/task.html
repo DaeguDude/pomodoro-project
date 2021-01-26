@@ -59,18 +59,23 @@
               <input
                 type="text"
                 name="task-detail__title"
-                class="task-detail__title"
                 placeholder="What are you working on?"
               />
             </div>
             <div class="task-detail__pomodoro-container">
               <span class="label">Est Pomodoros</span>
+              <div class="task-detail__pomodoros">
+                <input type="number" name="number-pomodoros" />
+                <button class="task-detail__increase-pomodoro-btn">
+                  <i class="fas fa-caret-up"></i>
+                </button>
+                <button class="task-detail__decrease-pomodoro-btn">
+                  <i class="fas fa-caret-down"></i>
+                </button>
+              </div>
             </div>
             <div class="task-detail__note-container">
-              <button class="task-detail__add-note-btn">
-                <i class="fas fa-plus-circle"></i>
-                Add Note
-              </button>
+              <button class="task-detail__add-note-btn">+ Add Note</button>
             </div>
           </main>
           <footer>
