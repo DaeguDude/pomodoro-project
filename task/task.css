@@ -77,9 +77,7 @@ Task
   background-color: white;
   cursor: pointer;
 }
-
 .task:hover { border-left: 6px solid rgb(204, 204, 204); }
-
 .task--focus { border-left: 6px solid rgb(34, 34, 34); }
 
 .task__check-marker {
@@ -89,7 +87,6 @@ Task
 }
 
 .task__check-marker:hover { opacity: 0.6; }
-
 .task__check-marker--completed { color: rgb(219, 82, 77); }
 
 .task__title {
@@ -230,7 +227,6 @@ input[name="number-pomodoros"]:focus { outline: none; }
 }
 
 .task-detail__note {
-  height: 34px;
   padding: 8px 0;
 }
 
@@ -243,6 +239,22 @@ input[name="number-pomodoros"]:focus { outline: none; }
   cursor: pointer;
   opacity: 0.9;
 }
+
+textarea[name="note"] {
+  width: 100%;
+  padding: 10px 14px;
+  margin: 8px 0px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  line-height: 1.4em;
+  color: rgb(85, 85, 85);
+  background-color: rgb(239, 239, 239);
+}
+
+textarea[name="note"]:focus { outline: none; }
+textarea[name="note"]::placeholder { color: rgba(0, 0, 0, 0.4); }
+
 
 .task-detail footer {
   display: flex;
@@ -285,5 +297,4 @@ input[name="number-pomodoros"]:focus { outline: none; }
 }
 
 .task-detail__save-btn--enabled { background-color: rgb(34, 34, 34); }
-
 .task-detail__save-btn--enabled:hover { opacity: 1; }
