@@ -13,82 +13,78 @@
   </head>
   <body>
     <div class="container">
-      <section class="task">
+      <section id="task-section">
         <header>
-          <div>
-            <h3 class="title">Tasks</h3>
+          <h3>Tasks</h3>
+          <button class="edit-btn">
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+        </header>
+
+        <ul class="task-list">
+          <li class="task">
+            <i class="task__check-marker fas fa-check-circle"></i>
+            <span class="task__title">
+              OhmygodOhmyOhmygodOhmyOhmygodOhmyOhmygodOhmyOhmygodOhmyOhmygodOhmy
+            </span>
+            <div class="task__pomodoros">
+              <span class="task__completed-pomodoros">0</span> /
+              <span class="task__estimated-pomodoros">5</span>
+            </div>
             <button class="edit-btn">
               <i class="fas fa-ellipsis-v"></i>
             </button>
-          </div>
-        </header>
+          </li>
 
-        <article class="task-list">
-          <div class="task-item">
-            <div class="task-item__left">
-              <i class="task-item__check-marker fas fa-check-circle"></i>
-              <span class="task-item__title"
-                >OhmygodOhmyOhmygodOhmyOhmygodOhmyOhmy
-                godOhmyOhmygodOhmyOhmygodOhmy</span
-              >
+          <li class="task">
+            <i class="task__check-marker fas fa-check-circle"></i>
+            <span class="task__title">
+              OhmygodOhmyOhmygodOhmyOhmygodOhmyOhmygodOhmyOhmygodOhmyOhmygodOhmy
+            </span>
+            <div class="task__pomodoros">
+              <span class="task__completed-pomodoros">0</span> /
+              <span class="task__estimated-pomodoros">13</span>
             </div>
-            <div class="task-item__right">
-              <div>
-                <span class="task-item__completed-pomodoros">0</span>
-                <span class="task-item__est-pomodoros">/ 5</span>
-              </div>
-              <button class="edit-btn">
-                <i class="fas fa-ellipsis-v"></i>
-              </button>
-            </div>
-          </div>
-          <div class="task-item"></div>
-          <div class="task-item"></div>
-        </article>
+            <button class="edit-btn">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+          </li>
+        </ul>
 
-        <article class="add-task">
-          <button class="add-task__add-btn">
-            <i class="fas fa-plus-circle"></i>
-            <span>Add Task</span>
-          </button>
-        </article>
+        <button class="add-task-btn">
+          <i class="fas fa-plus-circle"></i> Add Task
+        </button>
 
         <article class="task-detail">
-          <main class="task-detail__content">
-            <div class="task-detail__title-container">
+          <main>
+            <div class="task-detail__title">
               <input
-                type="text"
                 name="task-detail__title"
+                type="text"
                 placeholder="What are you working on?"
               />
             </div>
-            <div class="task-detail__pomodoro-container">
+            <div class="task-detail__pomodoro">
               <span class="label">Est Pomodoros</span>
-              <div class="task-detail__pomodoros">
-                <input type="number" name="number-pomodoros" />
-                <button class="task-detail__increase-pomodoro-btn">
+              <div class="task-detail__pomodoro-content">
+                <input name="number-pomodoros" type="number" />
+                <button class="pomodoro-updown-btn" name="pomodoro-up">
                   <i class="fas fa-caret-up"></i>
                 </button>
-                <button class="task-detail__decrease-pomodoro-btn">
+                <button class="pomodoro-updown-btn" name="pomodoro-down">
                   <i class="fas fa-caret-down"></i>
                 </button>
               </div>
             </div>
-            <div class="task-detail__note-container">
-              <button class="task-detail__add-note-btn">+ Add Note</button>
+            <div class="task-detail__note">
+              <button class="add-note-btn">+ Add Note</button>
             </div>
           </main>
           <footer>
-            <div>
-              <button class="task-detail__cancel-btn">Cancel</button>
-              <button class="task-detail__save-btn">Save</button>
-            </div>
+            <button class="task-detail__cancel-btn">Cancel</button>
+            <button class="task-detail__save-btn">Save</button>
           </footer>
         </article>
-
-        <footer>
-          <div></div>
-        </footer>
       </section>
     </div>
   </body>

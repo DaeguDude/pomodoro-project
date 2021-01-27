@@ -11,318 +11,247 @@ body {
 }
 
 /*** stylings for tags ***/
-button:hover {
-  cursor: pointer;
-}
+button:hover { cursor: pointer; }
 
-button:active {
-  transform: translateY(3px);
-}
+button:active { transform: translateY(1px); }
 
 /*** UTILITY CLASSES ***/
 .edit-btn {
-  border-radius: 4px;
-  background: none rgba(255, 255, 255, 0.2);
   width: 32px;
   padding: 8px;
   color: white;
+  background: none rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
 
-/*** Task Section Container ***/
+/****************************************
+Task Section
+****************************************/
 .container {
   height: 100vh;
-  background: rgb(219, 82, 77);
   padding-top: 30px;
+  background: rgb(219, 82, 77);
 }
 
-.task {
-  margin: 0 auto;
+#task-section {
   width: 480px;
-  border: 1px solid white;
+  margin: 0 auto;
 }
 
-.task header {
-  height: 48px;
-  padding-bottom: 14px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-  margin-bottom: 18px;
-}
-
-.task header div {
-  height: 100%;
+#task-section header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 48px;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
 }
 
-.task h3 {
+#task-section header h3 {
   font-size: 18px;
   font-weight: bold;
   color: white;
 }
 
-.task-item {
-  background-color: white;
-  min-height: 62px;
-  width: 100%;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  border-left: 6px solid transparent;
-  cursor: pointer;
-
+/****************************************
+Task List
+****************************************/
+.task-list {
   display: flex;
+  flex-direction: column;
 }
 
-.task-item:hover {
-  border-left: 6px solid rgb(204, 204, 204);
-}
-
-.task-item:first-child {
-  margin-top: 0;
-}
-
-.task-item--focus {
-  border-left: 6px solid rgb(34, 34, 34);
-}
-
-/*** Task Info(individual task) ***/
-.task-info {
-  width: 100%;
-  display: flex;
-}
-
-.task-item__left {
-  padding: 18px 14px;
-  max-width: 80%;
-
-  flex: 1 0 0;
-
+/****************************************
+Task 
+****************************************/
+.task {
   display: flex;
   align-items: center;
+  width: 100%;
+  min-height: 62px;
+  padding: 18px 0 14px 18px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border-left: 6px solid transparent;
+  background-color: white;
+  cursor: pointer;
 }
 
-.task-item__check-marker {
+.task:hover { border-left: 6px solid rgb(204, 204, 204); }
+
+.task--focus { border-left: 6px solid rgb(34, 34, 34); }
+
+.task__check-marker {
+  margin-right: 10px;
   font-size: 24px;
   color: rgb(223, 223, 223);
-  margin-right: 10px;
 }
 
-.task-item__check-marker:hover {
-  opacity: 0.6;
-}
+.task__check-marker:hover { opacity: 0.6; }
 
-.task-item__check-marker--completed {
-  color: rgb(219, 82, 77);
-}
+.task__check-marker--completed { color: rgb(219, 82, 77); }
 
-.task-item__title {
-  color: rgb(85, 85, 85);
-  font-weight: bold;
-  width: 85%;
+.task__title {
   flex: 1 0 0;
+  max-width: 70%;
+  font-weight: bold;
+  color: rgb(85, 85, 85);
   overflow-wrap: break-word;
 }
 
-.task-item__title--completed {
-  color: rgb(187, 187, 187);
+.task__title--completed {
   text-decoration: line-through;
+  color: rgb(187, 187, 187);
 }
 
-.task-item__right {
-  width: 20%;
-  flex: 0 0 auto;
-  color: #bbb;
-
+.task__pomodoros {
   display: flex;
   align-items: center;
-}
-
-.task-item__right div {
   width: 40px;
-  height: 20px;
-  margin-right: 18px;
+  margin: 0 10px;
   font-weight: bold;
+  color: #bbb;
 }
 
-.task-item__right .edit-btn {
+.task .edit-btn {
   width: 30px;
   height: 30px;
   padding: 2px 4px;
-  color: #555;
   border: 1px solid rgb(223, 223, 223);
+  color: #555;
 }
 
-.task-item__right .edit-btn:hover {
-  background: rgb(223, 223, 223);
-}
+.task .edit-btn:hover { background: rgb(223, 223, 223); }
 
-/*** Add Task Btn ***/
-.add-task__add-btn {
-  min-height: 62px;
-  width: 100%;
-  margin-bottom: 8px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.1);
-  opacity: 0.8;
-  border: 2px dashed rgba(255, 255, 255, 0.4);
-  border-radius: 8px;
-  font-weight: bold;
-
+/****************************************
+Add Task Button
+****************************************/
+.add-task-btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  min-height: 62px;
+  margin: 8px 0;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  font-weight: bold;
   color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+  cursor: pointer;
 }
 
-.add-task__add-btn:hover {
+.add-task-btn:hover {
   border: 2px dashed rgba(255, 255, 255, 0.4);
   opacity: 1;
 }
 
-.add-task .fa-plus-circle {
-  margin-right: 8px;
-}
+.add-task-btn .fa-plus-circle { margin-right: 8px; }
 
-/*** FOOTER ***/
-
-/* .task footer {
-  height: 68px;
-  padding: 20px 12px;
-  margin-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 255, 255, 0.1);
-} */
-
-/* TASK DETAIL CARD */
+/****************************************
+TASK DETAIL CARD
+****************************************/
 
 .task-detail {
+  display: flex;
+  flex-direction: column;
   width: 480px;
   height: 277px;
-
   background-color: white;
   border-radius: 8px;
-
-  display: flex;
-  flex-direction: column;
 }
 
-.task-detail__content {
-  padding: 18px 20px 18px;
+.task-detail main {
   flex: 1 0 0;
-
   display: flex;
   flex-direction: column;
+  padding: 18px 20px 18px;
 }
 
-.task-detail__title-container {
-  padding: 8px 0;
+.task-detail__title {
   height: 61px;
+  padding: 8px 0;
 }
 
 input[name="task-detail__title"] {
-  border-radius: 4px;
-  font-size: 22px;
-  padding: 10px 0px;
-  box-shadow: none;
-  border: none;
-  color: rgb(85, 85, 85);
   width: 100%;
-  box-sizing: border-box;
+  padding: 10px 0px;
+  border: none;
+  font-size: 22px;
   font-weight: bold;
-}
-
-input[name="task-detail__title"]::placeholder {
-  color: rgba(0, 0, 0, 0.4);
-}
-
-input[name="task-detail__title"]:focus {
-  outline: none;
-}
-
-.task-detail__pomodoro-container {
-  padding: 8px 0;
-  height: 82px;
-}
-
-.task-detail__pomodoros {
-  margin-top: 8px;
-}
-
-.label {
   color: rgb(85, 85, 85);
+  box-shadow: none;
+}
+
+input[name="task-detail__title"]:focus { outline: none; }
+input[name="task-detail__title"]::placeholder { color: rgba(0, 0, 0, 0.4); }
+
+.task-detail__pomodoro {
+  height: 82px;
+  padding: 8px 0;
+}
+
+.task-detail__pomodoro-content { margin-top: 8px; }
+
+.task-detail .label {
   font-weight: bold;
+  color: rgb(85, 85, 85);
 }
 
 input[name="number-pomodoros"] {
-  border-radius: 4px;
-  background-color: rgb(239, 239, 239);
-  font-size: 16px;
-  padding: 10px;
-  box-shadow: none;
-  border: none;
-  color: rgb(85, 85, 85);
   width: 75px;
-  box-sizing: border-box;
+  padding: 10px;
   margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
   font-weight: bold;
-}
-
-input[name="number-pomodoros"]:focus {
-  outline: none;
-}
-
-.task-detail__increase-pomodoro-btn {
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.9;
-  font-size: 14px;
-  padding: 8px 12px;
-  width: 40px;
-  background-color: white;
   color: rgb(85, 85, 85);
-  border: 1px solid rgb(223, 223, 223);
-  box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
-  margin: 0px 2px;
+  background-color: rgb(239, 239, 239);
+  box-shadow: none;
 }
 
-.task-detail__decrease-pomodoro-btn {
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.9;
-  font-size: 14px;
-  padding: 8px 12px;
+input[name="number-pomodoros"]:focus { outline: none; }
+
+.pomodoro-updown-btn {
   width: 40px;
-  background-color: white;
-  color: rgb(85, 85, 85);
-  border: 1px solid rgb(223, 223, 223);
-  box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
+  padding: 8px 12px;
   margin: 0px 2px;
+  border: 1px solid rgb(223, 223, 223);
+  border-radius: 4px;
+  font-size: 14px;
+  color: rgb(85, 85, 85);
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
+  opacity: 0.9;
+  cursor: pointer;
 }
 
-.task-detail__note-container {
-  padding: 8px 0;
+.task-detail__note {
   height: 34px;
+  padding: 8px 0;
 }
 
-.task-detail__add-note-btn {
+.add-note-btn {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: underline;
+  background: none;
   cursor: pointer;
   opacity: 0.9;
-  font-size: 14px;
-  background: none;
-  color: rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 .task-detail footer {
-  background-color: rgb(239, 239, 239);
-  padding: 14px 20px;
-  height: 62px;
-  border-radius: 0 0 8px 8px;
-
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  height: 62px;
+  padding: 14px 20px;
+  border-radius: 0 0 8px 8px;
+  background-color: rgb(239, 239, 239);
 }
 
 .task-detail__cancel-btn {
@@ -339,26 +268,22 @@ input[name="number-pomodoros"]:focus {
 }
 
 .task-detail__cancel-btn:hover {
-  opacity: 1;
   color: rgb(128, 128, 128);
+  opacity: 1;
 }
 
 .task-detail__save-btn {
+  min-width: 70px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  background-color: rgb(171, 171, 171);
   cursor: pointer;
   box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
-  color: white;
   opacity: 0.9;
-  font-size: 14px;
-  padding: 10px 12px;
-  min-width: 70px;
-  border-radius: 4px;
-  background-color: rgb(171, 171, 171);
 }
 
-.task-detail__save-btn--enabled {
-  background-color: rgb(34, 34, 34);
-}
+.task-detail__save-btn--enabled { background-color: rgb(34, 34, 34); }
 
-.task-detail__save-btn--enabled:hover {
-  opacity: 1;
-}
+.task-detail__save-btn--enabled:hover { opacity: 1; }
