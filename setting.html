@@ -1,81 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Setting</title>
-    <link rel="stylesheet" href="setting.css">
-</head>
-<body>
-    <div id="modal">
-        <img src="config-white.png" alt="config icon">
-        <button type="button" id="modalOpenBtn">Setting</button>
-    </div>
+    <link rel="stylesheet" href="setting.css" />
+    <link rel="stylesheet" href="modal.css" />
+  </head>
+  <body>
+    <button type="button" id="modal__open-btn">
+      <img src="config-white.png" alt="config icon" class="btn-img" />
+      &nbsp;Setting
+    </button>
 
-    <div class="modal" id="settingModal">
-    <div class="modal-content">
-    <div class="quitBox">
-    <div class="setting">
-        <div class="title">Timer Setting</div>
-        <img src="remove-black-sm.png" alt="remove icon" class="remove_Btn">
-        <div class="value">
-            <div class="minute">
-                <div class="mTitle">Time (minutes)</div>
-                <div class="pomodoroMinute">
-                    <label>Pomodoro</label>
-                    <input type="number" min="0" step="1" class="pomodoroMinuteInput" value="1"></input>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="padding-area">
+          <div class="setting">
+            <header class="setting__header">
+              <div>Timer Setting</div>
+              <img
+                src="remove-black-sm.png"
+                alt="remove icon"
+                class="setting__remove-btn btn-img close"
+              />
+            </header>
+            <article>
+              <div class="setting__items">
+                <div class="time__title">
+                  <span class="title">Time (minutes)</span>
                 </div>
-
-                <div class="shortBreakMinute">
-                    <label>Short Break</label>
-                    <input type="number" min="0" step="1" class="shortBreakInput" value="5"></input>
-                </div>
-
-                <div class="longBreakMinute">
-                    <label>Long Break</label>
-                    <input type="number" min="0" step="1" class="longBreakInput" value="15"></input>
-                </div>
-            </div>
-
-            <div class="autoStart">
-                <div class="autoStartLabel">
-                    <span>Auto start next round?</span>
-                </div>
-                <div class="autoStartCheckBox">
-                    <div>
-                        <input type="checkBox" id="autoStartInput" name=""></input>
-                        <label for="autoStartInput"></label>
+                <div class="time__items">
+                  <div class="time__item">
+                    <div class="time__pomodoro__label">
+                      <label class="time__label">Pomodoro</label>
                     </div>
-                </div>
-            </div>
+                    <input
+                      type="number"
+                      min="0"
+                      step="1"
+                      class="time__input"
+                      value="1"
+                    />
+                  </div>
 
-            <div class="volume">
-                <div class="volumeLabel">
-                    <span>Sound Volume</span>
-                </div>
-                <div class="volumeRange">
-                    <div class="volumeRangeValue">50</div>
-                    <input type="range" min="0" max="100" class="volumeRangeInput" id="volumeRangeInputId" value="50">
-                </div>
-            </div>
+                  <div class="time__item">
+                    <div class="time__short__label">
+                      <label class="time__label">Short Break</label>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      step="1"
+                      class="time__input"
+                      value="5"
+                    />
+                  </div>
 
-            <div class="longBreakInterval">
-                <div class="lbiLabel">
-                    <span>Long Break Interval</span>
+                  <div class="time__item">
+                    <div class="time__long__label">
+                      <label class="time__label">Long Break</label>
+                    </div>
+                    <input
+                      type="number"
+                      min="0"
+                      step="1"
+                      class="time__input"
+                      value="15"
+                    />
+                  </div>
                 </div>
-                <div class="lbiValue">
-                    <input type="number" min="1" step="1" width="70" class="lbiInput" value="4">
+              </div>
+
+              <div class="setting__items">
+                <div class="content">
+                  <div class="autoStart__title">
+                    <span class="title">Auto start next round?</span>
+                  </div>
+                  <div>
+                    <input type="checkBox" id="autoStart__checkBox" name="" />
+                    <label for="autoStart__checkBox"></label>
+                  </div>
                 </div>
-            </div>
+              </div>
+
+              <div class="setting__items">
+                <div class="content">
+                  <div class="volume__title">
+                    <span class="title">Sound Volume</span>
+                  </div>
+                  <div class="volume__content">
+                    <div class="volume__display"><span id="vd">50</span></div>
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      class="volume__range"
+                      id="vr"
+                      value="50"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="setting__items">
+                <div class="content">
+                  <div class="longBreakInterval__title">
+                    <span class="title">Long Break Interval</span>
+                  </div>
+                  <div>
+                    <input
+                      type="number"
+                      min="1"
+                      step="1"
+                      width="70"
+                      class="longBreakInterval__number"
+                      value="4"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-
         <div class="footer">
-            <button type="submit" class="OKBtn">OK</button>
+          <footer>
+            <button type="submit" class="footer__submit-btn">OK</button>
+          </footer>
         </div>
+      </div>
     </div>
-    </div>
-    </div>
-    </div>
-</body>
-<script src="setting.js"></script>
+  </body>
+  <script src="setting.js"></script>
+  <script src="modal.js"></script>
 </html>
