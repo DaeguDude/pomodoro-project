@@ -11,13 +11,54 @@
         <div class="header">
             <div class="nav-bar">
                 <div class="service-identity">
-                    <img src="./components/icons/icon-white.png" alt="">
-                    <div>Pomofocus</div>
+                    <a href="/">
+                        <div class="service-id">
+                            <img src="./img/icon-white.png" alt="" id="service-icon">
+                            Pomofocus
+                        </div>
+                    </a>
+                    <div>
+                        <!-- Dropdown format -->
+                        <!-- <div class="dropdown" id="">
+                            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a href="#">Link 1</a>
+                              <a href="#">Link 2</a>
+                              <a href="#">Link 3</a>
+                            </div>
+                          </div> -->
+                          <div class="dropdown" id="report-btn">
+                            <button onclick="myFunction()" class="dropbtn">Report</button>
+                            <div id="myDropdown1" class="dropdown-content">
+                              <a href="#">Link 1</a>
+                              <a href="#">Link 2</a>
+                              <a href="#">Link 3</a>
+                            </div>
+                          </div>
+                          <div class="dropdown" id="setting-btn">
+                            <button onclick="myFunction()" class="dropbtn">Setting</button>
+                            <div id="myDropdown2" class="dropdown-content">
+                              <a href="#">Link 1</a>
+
+                            </div>
+                          </div>
+                          <div class="dropdown" id="unlogged-profile-btn">
+                            <button onclick="myFunction()" class="dropbtn"><img src="./img/user-white.png" alt="profile">Profile</button>
+                            <div id="myDropdown3" class="dropdown-content">
+                              <a href="#">Link 1</a>
+                            </div>
+                          </div>
+                          <div class="dropdown" id="logged-profile-btn">
+                            <button onclick="myFunction()" class="dropbtn"><img src="./img/user-black.png" alt=""></button>
+                            <div id="myDropdown4" class="dropdown-content">
+                              <a href="#">Link 1</a>
+                              <a href="#">Link 2</a>
+                              <a href="#">Link 3</a>
+                              <a href="#">Link 4</a>
+                            </div>
+                          </div>
+                    </div>
                 </div>
-
-
-
-
             </div>
         </div>
         <div class="container" id="timer-section"></div>
@@ -26,5 +67,8 @@
         <div class="footer"></div>
     </div>
     
+
+
+    <script src="./script/dropdown.js"></script>
 </body>
 </html>
