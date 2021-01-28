@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="886700924848-jm5ejqtkomd15mh1uo08j0q2ou0kgqk4.apps.googleusercontent.com">
+    <title>Setting</title>
+    <link rel="stylesheet" href="setting.css" />
+  </head>
+  <body>
+    <header>
+      <button type="button" class="nav-btn" id="modal__open-btn">
+        <img src="./user-white.png" alt="Login icon" class="btn-img" id="Login-btn" />
+        &nbsp;Login
+      </button>
+      <div class="dropdown">
+        <div class="dropdown-menu" id="Google-login">
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+        <div class="dropdown-menu" id="Profile">
+          <img src="./user-black.png" alt="user icon" class="dropdown-icon">Profile
+        </div>
+        <div class="dropdown-menu" id="Subscription"></div>
+        <div class="dropdown-menu" id="Logout">
+          <img src="" alt="">
+          <a href="#" onclick="signOut();">Sign out</a>
+
+        </div>
+        <div class="dropdown-menu" id="Delete Account"></div>
+      </div>
+    </header>
+
+
+  </body>
+  <script src="setting.js"></script>
+  <script src="profile.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</html>
