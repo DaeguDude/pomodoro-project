@@ -155,7 +155,6 @@ TASK DETAIL CARD
   display: flex;
   flex-direction: column;
   width: 480px;
-  height: 277px;
   background-color: white;
   border-radius: 8px;
 }
@@ -256,15 +255,18 @@ textarea[name="note"]:focus { outline: none; }
 textarea[name="note"]::placeholder { color: rgba(0, 0, 0, 0.4); }
 
 
+
 .task-detail footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 62px;
   padding: 14px 20px;
   border-radius: 0 0 8px 8px;
   background-color: rgb(239, 239, 239);
 }
+
+.create-task footer { justify-content: flex-end; }
+.edit-task footer { justify-content: space-between; }
 
 .task-detail__delete-btn {
   text-align: center;

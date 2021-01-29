@@ -1,19 +1,27 @@
 // 페이지가 로딩이 되면, Task Section을 화면에 띄우고 클릭 이벤트에 등록을 하는 등 초기 세팅을 하자.
 import "./reset.css";
 import "./task.css";
+import { CreateTask, EditTask } from './taskDetail';
 import AddTaskBtn from "./addTaskBtn";
-import TaskDetail from "./taskDetail";
+
+
 const myAddTaskBtn = new AddTaskBtn();
-const myTaskDetail = new TaskDetail();
+const myCreateTask = new CreateTask();
+const myEditTask = new EditTask();
+
+const taskSection = document.querySelector('#task-section');
 
 const addTaskBtn = document.querySelector(".add-task-btn");
 addTaskBtn.addEventListener("click", () => {
-  myAddTaskBtn.hide();
-  document.querySelector("#task-section").appendChild(myTaskDetail.render());
+  console.log('clicked')
+  taskSection.appendChild(myCreateTask.render())
+  taskSection.appendChild(myEditTask.render())
+
 });
 
-const taskDetail = document.querySelector(".task-detail");
-taskDetail.remove();
+
+// const taskDetail = document.querySelector(".task-detail");
+// taskDetail.remove();
 
 // taskSection.addEventListener("click", (e) => {
 //   if (e.target.className.includes("task__check-marker")) {
