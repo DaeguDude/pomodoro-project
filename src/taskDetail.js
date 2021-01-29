@@ -1,4 +1,5 @@
-const editTask = document.createRange().createContextualFragment(`
+const editTask = 
+  `
   <article class="task-detail edit-task">
   <main>
     <div class="task-detail__title">
@@ -31,8 +32,7 @@ const editTask = document.createRange().createContextualFragment(`
       <button class="task-detail__save-btn">Save</button>
     </div>
   </footer>
-  </article>
-`)
+  </article>`;
 
 const createTask = document.createRange().createContextualFragment(`
   <article class="task-detail create-task">
@@ -70,7 +70,6 @@ const createTask = document.createRange().createContextualFragment(`
 `)
 
 
-
 class CreateTask {
   constructor() {}
 
@@ -78,7 +77,6 @@ class CreateTask {
     return createTask;
   }
   
-
   hide() {
     document.querySelector(".create-task").remove();
   }
@@ -88,10 +86,16 @@ class EditTask {
   constructor() {}
 
   render() {
-    return editTask;
+    const result = document.createRange().createContextualFragment(`${editTask}`);
+    result.querySelector('.edit-task').addEventListener('click', this.onClickHandler);
+
+    return result;
+  }
+
+  onClickHandler(event) {
+    console.log(event.target);
   }
   
-
   hide() {
     document.querySelector(".edit-task").remove();
   }
@@ -99,29 +103,4 @@ class EditTask {
 
 export { CreateTask, EditTask }
 
-class Menu {
-  constructor(elem) {
-    this._elem = elem;
-    elem.onclick = this.onClick.bind(this); // (*)
-  }
-
-  save() {
-    alert('saving');
-  }
-
-  load() {
-    alert('loading');
-  }
-
-  search() {
-    alert('searching');
-  }
-
-  onClick(event) {
-    let action = event.target.dataset.action;
-    if (action) {
-      this[action]();
-    }
-  };
-}
 
