@@ -12,10 +12,10 @@ const editTask = document.createRange().createContextualFragment(`
       <span class="label">Est Pomodoros</span>
       <div class="task-detail__pomodoro-content">
         <input name="number-pomodoros" type="number" value="1" />
-        <button class="pomodoro-updown-btn" name="pomodoro-up">
+        <button class="pomodoro-updown-btn pomodoro-up" >
           <i class="fas fa-caret-up"></i>
         </button>
-        <button class="pomodoro-updown-btn" name="pomodoro-down">
+        <button class="pomodoro-updown-btn pomodoro-down" >
           <i class="fas fa-caret-down"></i>
         </button>
       </div>
@@ -48,10 +48,10 @@ const createTask = document.createRange().createContextualFragment(`
       <span class="label">Est Pomodoros</span>
       <div class="task-detail__pomodoro-content">
         <input name="number-pomodoros" type="number" value="1" />
-        <button class="pomodoro-updown-btn" name="pomodoro-up">
+        <button class="pomodoro-updown-btn pomodoro-up" >
           <i class="fas fa-caret-up"></i>
         </button>
-        <button class="pomodoro-updown-btn" name="pomodoro-down">
+        <button class="pomodoro-updown-btn pomodoro-down" >
           <i class="fas fa-caret-down"></i>
         </button>
       </div>
@@ -98,3 +98,30 @@ class EditTask {
 }
 
 export { CreateTask, EditTask }
+
+class Menu {
+  constructor(elem) {
+    this._elem = elem;
+    elem.onclick = this.onClick.bind(this); // (*)
+  }
+
+  save() {
+    alert('saving');
+  }
+
+  load() {
+    alert('loading');
+  }
+
+  search() {
+    alert('searching');
+  }
+
+  onClick(event) {
+    let action = event.target.dataset.action;
+    if (action) {
+      this[action]();
+    }
+  };
+}
+
