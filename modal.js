@@ -13,7 +13,7 @@ span.addEventListener("click", closeModal, false);
 submitButton.addEventListener("click", closeModal, false);
 
 /* setting 관련 */
-submitButton.addEventListener("click", getSetting, false);
+// submitButton.addEventListener("click", getSetting, false);
 /* end */
 
 function closeModal() {
