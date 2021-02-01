@@ -1,5 +1,5 @@
 import { sayHello } from "./dropdown.js";
-import '../style/newstyle.css';
+import '../style/style.css';
 import Icon from '../img/icon-white.png';
 
 const logo = document.querySelector('.logo')
