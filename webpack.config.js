@@ -5,7 +5,10 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: 'dist/',
+
   },
+  mode: 'none',
   module: {
     rules: [
       {
