@@ -285,7 +285,6 @@ textarea[name="note"]::placeholder { color: rgba(0, 0, 0, 0.4); }
 }
 
 .task-detail__cancel-btn {
-  cursor: pointer;
   opacity: 0.9;
   font-size: 14px;
   padding: 8px 12px;
@@ -308,11 +307,13 @@ textarea[name="note"]::placeholder { color: rgba(0, 0, 0, 0.4); }
   border-radius: 4px;
   font-size: 14px;
   color: white;
-  background-color: rgb(171, 171, 171);
-  cursor: pointer;
+  background-color: rgb(34, 34, 34);
   box-shadow: rgb(0 0 0 / 20%) 0px 2px 2px;
   opacity: 0.9;
 }
 
-.task-detail__save-btn--enabled { background-color: rgb(34, 34, 34); }
-.task-detail__save-btn--enabled:hover { opacity: 1; }
+.task-detail__save-btn--disabled {
+  pointer-events: none;
+  background-color: rgb(171, 171, 171);
+}
+
