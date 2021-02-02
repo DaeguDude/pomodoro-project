@@ -78,7 +78,10 @@ Task
   cursor: pointer;
 }
 .task:hover { border-left: 6px solid rgb(204, 204, 204); }
-.task--focus { border-left: 6px solid rgb(34, 34, 34); }
+.task:focus { 
+  border-left: 6px solid rgb(34, 34, 34);
+  outline: none;
+}
 
 .task__check-marker {
   margin-right: 10px;

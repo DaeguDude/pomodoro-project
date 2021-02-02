@@ -40,8 +40,9 @@ class Task {
   }
 
   render() {
+    const NO_TAB_FOCUS = -1;
     const taskHtmlContent = `
-        <li class="task">
+        <li class="task" tabindex="${NO_TAB_FOCUS}">
         <i class="task__check-marker fas fa-check-circle" data-action="toggleCompleted"></i>
         <span class="task__title">
           ${this.title}
