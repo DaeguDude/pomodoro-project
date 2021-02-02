@@ -1,17 +1,32 @@
+import CreateTask from "./createTask";
+
 export default class AddTaskBtn {
-  constructor() {}
+  constructor() {
+    this.elem = null;
+  }
 
   render() {
-    return document.createRange().createContextualFragment(
-      `
+    const htmlContent = `
       <button class="add-task-btn">
         <i class="fas fa-plus-circle"></i> Add Task
       </button>
-      `
-    );
+    `;
+    const result = document.createRange().createContextualFragment(htmlContent);
+    result
+      .querySelector(".add-task-btn")
+      .addEventListener("click", this.onClickHandler.bind(this));
+
+    this.elem = result.querySelector(".add-task-btn");
+    return result;
   }
 
   hide() {
-    document.querySelector(".add-task-btn").remove();
+    this.elem.remove();
+  }
+
+  onClickHandler() {
+    this.hide();
+    const taskSection = document.querySelector("#task-section");
+    taskSection.appendChild(CreateTask.prototype.render());
   }
 }

@@ -2,6 +2,7 @@
 import "./reset.css";
 import "./task.css";
 import TaskManager from "./taskManager";
+import AddTaskBtn from "./addTaskBtn";
 
 const myTaskManager = new TaskManager();
 
@@ -27,9 +28,5 @@ task5.toggleCompleted();
 myTaskManager.removeCompletedTasks();
 console.log(myTaskManager);
 
-// This works
-// taskList.appendChild(allTasks[0]);
-// taskList.appendChild(allTasks[1]);
-// taskList.appendChild(allTasks[2]);
-
-// allTasks.forEach((task) => taskList.appendChild(task));
+const taskSection = document.querySelector("#task-section");
+taskSection.appendChild(AddTaskBtn.prototype.render());
