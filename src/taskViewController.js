@@ -1,4 +1,5 @@
 import AddTaskBtn from "./addTaskBtn";
+import EditTask from "./editTask";
 
 class TaskViewController {
   constructor() {}
@@ -11,6 +12,11 @@ class TaskViewController {
     const taskSection = document.querySelector("#task-section");
     const addTaskBtn = new AddTaskBtn();
     taskSection.appendChild(addTaskBtn.render());
+  }
+
+  showEditTask() {
+    const editTask = new EditTask();
+    editTask.render();
   }
 }
 

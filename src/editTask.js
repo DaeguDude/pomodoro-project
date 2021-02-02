@@ -1,4 +1,8 @@
-const editTaskHtmlContent = `
+export default class EditTask {
+  constructor(task) {
+    this.elem = null;
+    this.task = task;
+    this.htmlContent = `
     <article class="task-detail edit-task">
     <main>
       <div class="task-detail__title">
@@ -7,11 +11,12 @@ const editTaskHtmlContent = `
           type="text"
           placeholder="What are you working on?"
         />
+        ${task.title}
       </div>
       <div class="task-detail__pomodoro">
         <span class="label">Est Pomodoros</span>
         <div class="task-detail__pomodoro-content">
-          <input name="number-pomodoros" type="number" value="1" />
+          <input name="number-pomodoros" type="number" value="${task.estimatedPomodoros}" />
           <button class="pomodoro-updown-btn pomodoro-up" data-action="increment">
             <i class="fas fa-caret-up"></i>
           </button>
@@ -33,16 +38,12 @@ const editTaskHtmlContent = `
     </footer>
     </article>
   `;
-
-export default class EditTask {
-  constructor() {
-    this.elem = null;
   }
 
   render() {
     const result = document
       .createRange()
-      .createContextualFragment(editTaskHtmlContent);
+      .createContextualFragment(this.htmlContent);
 
     result
       .querySelector(".edit-task")
@@ -51,6 +52,23 @@ export default class EditTask {
     result
       .querySelector(".task-detail__title")
       .addEventListener("input", this.onInputHandler.bind(this));
+
+    // 만약에 노트가 있다면... textarea에 노트를 보여주고 없다면 그냥.
+
+    if (this.task.note != "") {
+      const addNoteBtn = result.querySelector(".add-note-btn");
+      const textArea = createTextArea(this.task.note);
+
+      addNoteBtn.replaceWith(textArea);
+
+      function createTextArea(note) {
+        return document
+          .createRange()
+          .createContextualFragment(
+            `<textarea name="note" placeholder="Some notes...">${note}</textarea>`
+          );
+      }
+    }
 
     this.elem = result.querySelector(".edit-task");
     return result;

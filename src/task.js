@@ -1,4 +1,5 @@
 import EditTask from "./editTask";
+import TaskManager from "./taskManager";
 
 export default class Task {
   constructor(TaskInfo) {
@@ -25,10 +26,9 @@ export default class Task {
   }
 
   openEditTask() {
-    const editTask = new EditTask();
-    document
-      .querySelector(".task-list")
-      .replaceChild(editTask.render(), this.elem);
+    const task = TaskManager.getTaskById(this.id);
+    const editTask = new EditTask(this);
+    editTask.render();
   }
 
   onClickHandler(event) {
