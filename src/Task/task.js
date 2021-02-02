@@ -11,24 +11,23 @@ class Task {
   }
 
   toggleCompleted() {
-    console.log('toggle Complete')
-    console.log(`before: ${this.isCompleted}`)
     this.isCompleted = !this.isCompleted;
-    console.log(`after: ${this.isCompleted}`)
-    
-    function toggleCompletedDisplay() {
-  
-    }
+    this.toggleCompletedDisplay();
   }
 
-
+  toggleCompletedDisplay() {
+    const title = this.elem.querySelector(".task__title");
+    const checkMarker = this.elem.querySelector(".task__check-marker");
+    title.classList.toggle("task__title--completed");
+    checkMarker.classList.toggle("task__check-marker--completed");
+  }
   openEditTask() {
-    console.log("open edit task")
+    console.log("open edit task");
   }
 
   onClickHandler(event) {
     let action;
-    if (event.target.classList.contains('fa-ellipsis-v')) {
+    if (event.target.classList.contains("fa-ellipsis-v")) {
       const editBtn = event.target.closest(".edit-btn");
       action = editBtn.dataset.action;
     } else {
@@ -41,8 +40,7 @@ class Task {
   }
 
   render() {
-    const taskHtmlContent = 
-      (`
+    const taskHtmlContent = `
         <li class="task">
         <i class="task__check-marker fas fa-check-circle" data-action="toggleCompleted"></i>
         <span class="task__title">
@@ -56,11 +54,15 @@ class Task {
           <i class="fas fa-ellipsis-v"></i>
         </button>
       </li>
-    `);
+    `;
 
-    const result = document.createRange().createContextualFragment(taskHtmlContent);
-    this.elem = result.querySelector('.task');
-    result.querySelector(".task").addEventListener("click", this.onClickHandler.bind(this));
+    const result = document
+      .createRange()
+      .createContextualFragment(taskHtmlContent);
+    this.elem = result.querySelector(".task");
+    result
+      .querySelector(".task")
+      .addEventListener("click", this.onClickHandler.bind(this));
 
     return result;
   }
@@ -69,10 +71,9 @@ class Task {
     this.elem.remove();
   }
 }
-const myTask = new Task({title: 'Shut up', estimatedPomodoros: 4});
-const container = document.querySelector('.container');
+const myTask = new Task({ title: "Shut up", estimatedPomodoros: 4 });
+const container = document.querySelector(".container");
 
 console.log(myTask);
 container.appendChild(myTask.render());
 console.log(myTask);
-
