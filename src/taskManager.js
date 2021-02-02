@@ -1,6 +1,7 @@
 import Task from "./task";
+import TaskViewController from "./taskViewController";
 
-export default class TaskManager {
+class TaskManager {
   constructor() {
     this.tasks = [];
   }
@@ -9,6 +10,9 @@ export default class TaskManager {
     taskInfo.id = this.getNewTaskId();
     const newTask = new Task(taskInfo);
     this.tasks.push(newTask);
+
+    TaskViewController.addTask(newTask);
+    TaskViewController.addAddTaskBtn();
   }
 
   getNewTaskId() {
@@ -40,3 +44,6 @@ export default class TaskManager {
     return this.tasks.map((task) => task.render());
   }
 }
+
+const taskManager = new TaskManager();
+export default taskManager;

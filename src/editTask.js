@@ -1,8 +1,5 @@
-import TaskManager from "./taskManager";
-import taskViewController from "./taskViewController";
-
-const createTaskHtmlContent = `
-    <article class="task-detail create-task">
+const editTaskHtmlContent = `
+    <article class="task-detail edit-task">
     <main>
       <div class="task-detail__title">
         <input
@@ -28,6 +25,7 @@ const createTaskHtmlContent = `
       </div>
     </main>
     <footer>
+      <button class="task-detail__delete-btn" data-action="delete">Delete</button>
       <div>
         <button class="task-detail__cancel-btn" data-action="cancel">Cancel</button>
         <button class="task-detail__save-btn task-detail__save-btn--disabled" data-action="save">Save</button>
@@ -36,7 +34,7 @@ const createTaskHtmlContent = `
     </article>
   `;
 
-export default class CreateTask {
+export default class EditTask {
   constructor() {
     this.elem = null;
   }
@@ -44,17 +42,17 @@ export default class CreateTask {
   render() {
     const result = document
       .createRange()
-      .createContextualFragment(createTaskHtmlContent);
+      .createContextualFragment(editTaskHtmlContent);
 
     result
-      .querySelector(".create-task")
+      .querySelector(".edit-task")
       .addEventListener("click", this.onClickHandler.bind(this));
 
     result
       .querySelector(".task-detail__title")
       .addEventListener("input", this.onInputHandler.bind(this));
 
-    this.elem = result.querySelector(".create-task");
+    this.elem = result.querySelector(".edit-task");
     return result;
   }
 
@@ -75,6 +73,11 @@ export default class CreateTask {
     this.elem.querySelector('input[name="number-pomodoros"]').value--;
   }
 
+  delete() {
+    console.log("Close modal");
+    console.log("Delete task");
+  }
+
   addNote() {
     this.removeAddNoteBtn();
     this.showTextArea(createTextArea());
@@ -86,10 +89,6 @@ export default class CreateTask {
           `<textarea name="note" placeholder="Some notes..."></textarea>`
         );
     }
-
-    const showTextArea = (noteTextArea) => {
-      this.elem.querySelector(".task-detail__note").appendChild(noteTextArea);
-    };
   }
 
   removeAddNoteBtn() {
@@ -102,7 +101,11 @@ export default class CreateTask {
 
   cancel() {
     this.hide();
-    taskViewController.addAddTaskBtn();
+
+    const editTask = new EditTask();
+    document
+      .querySelector(".task-list")
+      .replaceChild(editTask.render(), this.elem);
   }
 
   onClickHandler(event) {
@@ -121,30 +124,30 @@ export default class CreateTask {
 
   onInputHandler(event) {
     if (event.target.value) {
-      return this.elem
+      return document
         .querySelector(".task-detail__save-btn")
         .classList.remove("task-detail__save-btn--disabled");
     }
 
     if (!event.target.value) {
-      return this.elem
+      return document
         .querySelector(".task-detail__save-btn")
         .classList.add("task-detail__save-btn--disabled");
     }
   }
 
   getTaskInfo() {
-    const title = this.elem.querySelector('input[name="task-detail__title"]')
+    const title = document.querySelector('input[name="task-detail__title"]')
       .value;
-    const estimatedPomodoros = this.elem.querySelector(
+    const numPomodoros = document.querySelector(
       'input[name="number-pomodoros"]'
     ).value;
     let note = "";
-
-    if (this.elem.querySelector('textarea[name="note"]')) {
-      note = this.elem.querySelector('textarea[name="note"]').value;
+    if (document.querySelector('textarea[name="note"]')) {
+      note = document.querySelector('textarea[name="note"]').value;
     }
 
-    TaskManager.addTask({ title, estimatedPomodoros, note });
+    console.log({ title, numPomodoros, note });
+    return { title, numPomodoros, note };
   }
 }

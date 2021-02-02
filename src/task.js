@@ -1,3 +1,5 @@
+import EditTask from "./editTask";
+
 export default class Task {
   constructor(TaskInfo) {
     const { id, title, note, estimatedPomodoros } = TaskInfo;
@@ -23,7 +25,10 @@ export default class Task {
   }
 
   openEditTask() {
-    console.log("open edit task");
+    const editTask = new EditTask();
+    document
+      .querySelector(".task-list")
+      .replaceChild(editTask.render(), this.elem);
   }
 
   onClickHandler(event) {
