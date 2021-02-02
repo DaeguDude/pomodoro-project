@@ -20,6 +20,10 @@ export default class TaskManager {
     this.updateAllTasksId();
   }
 
+  removeCompletedTasks() {
+    this.tasks = this.tasks.filter((task) => task.isCompleted);
+  }
+
   updateAllTasksId() {
     this.tasks.forEach((task, index) => (task.id = index + 1));
   }

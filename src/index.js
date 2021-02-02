@@ -14,9 +14,18 @@ myTaskManager.addTask({ title: "d" });
 myTaskManager.addTask({ title: "e" });
 myTaskManager.addTask({ title: "f" });
 
-const allTasks = myTaskManager
-  .renderAllTasks()
-  .forEach((task) => taskList.appendChild(task));
+const task1 = myTaskManager.getTaskById(1);
+const task3 = myTaskManager.getTaskById(3);
+const task5 = myTaskManager.getTaskById(5);
+
+myTaskManager.renderAllTasks().forEach((task) => taskList.appendChild(task));
+
+task1.toggleCompleted();
+task3.toggleCompleted();
+task5.toggleCompleted();
+
+myTaskManager.removeCompletedTasks();
+console.log(myTaskManager);
 
 // This works
 // taskList.appendChild(allTasks[0]);
