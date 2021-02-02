@@ -1,4 +1,4 @@
-class Task {
+export default class Task {
   constructor(TaskInfo) {
     const { id, title, note, estimatedPomodoros } = TaskInfo;
     this.elem = null;
@@ -61,11 +61,12 @@ class Task {
     const result = document
       .createRange()
       .createContextualFragment(taskHtmlContent);
-    this.elem = result.querySelector(".task");
+
     result
       .querySelector(".task")
       .addEventListener("click", this.onClickHandler.bind(this));
 
+    this.elem = result.querySelector(".task");
     return result;
   }
 
@@ -73,11 +74,3 @@ class Task {
     this.elem.remove();
   }
 }
-// const myTask = new Task({ title: "Shut up", estimatedPomodoros: 4 });
-// const container = document.querySelector(".container");
-
-// console.log(myTask);
-// container.appendChild(myTask.render());
-// console.log(myTask);
-
-module.exports = Task;
