@@ -6,7 +6,6 @@ export default class AddTaskBtn {
   }
 
   render() {
-    console.log("dffdsff");
     const htmlContent = `
       <button class="add-task-btn">
         <i class="fas fa-plus-circle"></i> Add Task

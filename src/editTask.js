@@ -11,12 +11,11 @@ export default class EditTask {
           type="text"
           placeholder="What are you working on?"
         />
-        ${task.title}
       </div>
       <div class="task-detail__pomodoro">
         <span class="label">Est Pomodoros</span>
         <div class="task-detail__pomodoro-content">
-          <input name="number-pomodoros" type="number" value="${task.estimatedPomodoros}" />
+          <input name="number-pomodoros" type="number" value="0" />
           <button class="pomodoro-updown-btn pomodoro-up" data-action="increment">
             <i class="fas fa-caret-up"></i>
           </button>
@@ -40,10 +39,6 @@ export default class EditTask {
   `;
   }
 
-  test() {
-    console.log(" I am on testig buddy ");
-  }
-
   render() {
     const result = document
       .createRange()
@@ -57,7 +52,17 @@ export default class EditTask {
       .querySelector(".task-detail__title")
       .addEventListener("input", this.onInputHandler.bind(this));
 
-    // 만약에 노트가 있다면... textarea에 노트를 보여주고 없다면 그냥.
+    this.insertTaskInfo(result);
+    
+    this.elem = result.querySelector(".edit-task");
+    return result;
+  }
+
+  insertTaskInfo(result) {
+    const titleInputElem = result.querySelector('input[name="task-detail__title"]');
+    const pomodoroInputElem = result.querySelector('input[name="number-pomodoros"]');
+    titleInputElem.value = this.task.title;
+    pomodoroInputElem.value = this.task.estimatedPomodoros;
 
     if (this.task.note != "") {
       const addNoteBtn = result.querySelector(".add-note-btn");
@@ -65,9 +70,6 @@ export default class EditTask {
 
       addNoteBtn.replaceWith(textArea);
     }
-
-    this.elem = result.querySelector(".edit-task");
-    return result;
   }
 
   hide() {
