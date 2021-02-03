@@ -1,5 +1,5 @@
 export default function printMe() {
-  console.log('------------------------------------------');
-  console.log('Dude t I paid for');
-  console.log('------------------------------------------');
+  console.log("------------------------------------------");
+  console.log("Du");
+  console.log("------------------------------------------");
 }

@@ -40,6 +40,10 @@ export default class EditTask {
   `;
   }
 
+  test() {
+    console.log(" I am on testig buddy ");
+  }
+
   render() {
     const result = document
       .createRange()
@@ -60,14 +64,6 @@ export default class EditTask {
       const textArea = createTextArea(this.task.note);
 
       addNoteBtn.replaceWith(textArea);
-
-      function createTextArea(note) {
-        return document
-          .createRange()
-          .createContextualFragment(
-            `<textarea name="note" placeholder="Some notes...">${note}</textarea>`
-          );
-      }
     }
 
     this.elem = result.querySelector(".edit-task");
@@ -168,4 +164,12 @@ export default class EditTask {
     console.log({ title, numPomodoros, note });
     return { title, numPomodoros, note };
   }
+}
+
+function createTextArea(note) {
+  return document
+    .createRange()
+    .createContextualFragment(
+      `<textarea name="note" placeholder="Some notes...">${note}</textarea>`
+    );
 }

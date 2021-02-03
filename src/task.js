@@ -1,5 +1,5 @@
 import EditTask from "./editTask";
-import TaskManager from "./taskManager";
+import printMe from "./print";
 
 export default class Task {
   constructor(TaskInfo) {
@@ -26,9 +26,8 @@ export default class Task {
   }
 
   openEditTask() {
-    const task = TaskManager.getTaskById(this.id);
-    const editTask = new EditTask(this);
-    editTask.render();
+    console.log("editing");
+    console.log("render new edit task");
   }
 
   onClickHandler(event) {
@@ -78,4 +77,11 @@ export default class Task {
   hide() {
     this.elem.remove();
   }
+}
+
+if (module.hot) {
+  module.hot.accept("./print.js", function () {
+    console.log("Accepting the updated printMe module!");
+    printMe();
+  });
 }

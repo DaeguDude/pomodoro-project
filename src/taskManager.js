@@ -11,6 +11,9 @@ class TaskManager {
     const newTask = new Task(taskInfo);
     this.tasks.push(newTask);
 
+    console.log("current Task: ");
+    console.log(this.tasks);
+
     TaskViewController.addTask(newTask);
     TaskViewController.addAddTaskBtn();
   }

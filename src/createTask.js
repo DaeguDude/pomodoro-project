@@ -78,18 +78,6 @@ export default class CreateTask {
   addNote() {
     this.removeAddNoteBtn();
     this.showTextArea(createTextArea());
-
-    function createTextArea() {
-      return document
-        .createRange()
-        .createContextualFragment(
-          `<textarea name="note" placeholder="Some notes..."></textarea>`
-        );
-    }
-
-    const showTextArea = (noteTextArea) => {
-      this.elem.querySelector(".task-detail__note").appendChild(noteTextArea);
-    };
   }
 
   removeAddNoteBtn() {
@@ -147,4 +135,12 @@ export default class CreateTask {
 
     TaskManager.addTask({ title, estimatedPomodoros, note });
   }
+}
+
+function createTextArea() {
+  return document
+    .createRange()
+    .createContextualFragment(
+      `<textarea name="note" placeholder="Some notes..."></textarea>`
+    );
 }
