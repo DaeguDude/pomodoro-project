@@ -540,7 +540,7 @@ function getLoginBtn() {
             <img src="${_img_user_white_png__WEBPACK_IMPORTED_MODULE_0__.default}" alt="" class="mini-icon"><div>Login</div>
         </button>
         <div class="dropdown-container" id="login-dropdown">
-            <div class="dropdown-list" id="google-signin">
+            <div class="dropdown-list" id="google-signin" data-onsuccess="onSignIn">
                 <img src="${_img_google_black_png__WEBPACK_IMPORTED_MODULE_1__.default}" alt="" class="dropdown-icon"><div>Login with Google</div>
             </div>
         </div>    

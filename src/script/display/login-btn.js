@@ -15,7 +15,7 @@ function getLoginBtn() {
             <img src="${login}" alt="" class="mini-icon"><div>Login</div>
         </button>
         <div class="dropdown-container" id="login-dropdown">
-            <div class="dropdown-list" id="google-signin">
+            <div class="dropdown-list" id="google-signin" data-onsuccess="onSignIn">
                 <img src="${google}" alt="" class="dropdown-icon"><div>Login with Google</div>
             </div>
         </div>    
