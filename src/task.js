@@ -29,11 +29,10 @@ export default class Task {
     console.log("render new edit k");
 
     const editTask = new EditTask(this);
-    const renderedEditTask = editTask.render().querySelector('.edit-task')
-    console.log(renderedEditTask)
-    console.log(this.elem)
+    const renderedEditTask = editTask.render().querySelector(".edit-task");
+    console.log(renderedEditTask);
+    console.log(this.elem);
     this.elem.replaceWith(renderedEditTask);
-
   }
 
   onClickHandler(event) {
@@ -84,4 +83,3 @@ export default class Task {
     this.elem.remove();
   }
 }
-

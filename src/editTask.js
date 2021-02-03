@@ -34,7 +34,7 @@ export default class EditTask {
       <button class="task-detail__delete-btn" data-action="delete">Delete</button>
       <div>
         <button class="task-detail__cancel-btn" data-action="cancel">Cancel</button>
-        <button class="task-detail__save-btn task-detail__save-btn--disabled" data-action="save">Save</button>
+        <button class="task-detail__save-btn" data-action="save">Save</button>
       </div>
     </footer>
     </article>
@@ -83,7 +83,7 @@ export default class EditTask {
   }
 
   save() {
-    this.getTaskInfo();
+    TaskManager.modifyTask(this);
     this.hide();
   }
 
@@ -163,16 +163,15 @@ export default class EditTask {
   getTaskInfo() {
     const title = document.querySelector('input[name="task-detail__title"]')
       .value;
-    const numPomodoros = document.querySelector(
-      'input[name="number-pomodoros"]'
-    ).value;
+    const estimatedPomodoros = Number(
+      document.querySelector('input[name="number-pomodoros"]').value
+    );
     let note = "";
     if (document.querySelector('textarea[name="note"]')) {
       note = document.querySelector('textarea[name="note"]').value;
     }
 
-    console.log({ title, numPomodoros, note });
-    return { title, numPomodoros, note };
+    return { title, estimatedPomodoros, note };
   }
 }
 
