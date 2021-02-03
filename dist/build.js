@@ -548,8 +548,6 @@ function getLoginBtn() {
 `);
     nav.appendChild(loginBtn);
     document.getElementById("login-btn").addEventListener("click", toggleLoginDropdown);
-    // document.querySelector(".dropdown-list").addEventListener("mouseover", function(e) {
-    //     e.target.style.backgroundColor = "rgb(240, 238, 238)";});
     // document.querySelector(".dropdown-list").addEventListener("click", login());
 }
 
