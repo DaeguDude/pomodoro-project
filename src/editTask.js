@@ -1,3 +1,5 @@
+import TaskManager from "./taskManager";
+
 export default class EditTask {
   constructor(task) {
     this.elem = null;
@@ -53,14 +55,18 @@ export default class EditTask {
       .addEventListener("input", this.onInputHandler.bind(this));
 
     this.insertTaskInfo(result);
-    
+
     this.elem = result.querySelector(".edit-task");
     return result;
   }
 
   insertTaskInfo(result) {
-    const titleInputElem = result.querySelector('input[name="task-detail__title"]');
-    const pomodoroInputElem = result.querySelector('input[name="number-pomodoros"]');
+    const titleInputElem = result.querySelector(
+      'input[name="task-detail__title"]'
+    );
+    const pomodoroInputElem = result.querySelector(
+      'input[name="number-pomodoros"]'
+    );
     titleInputElem.value = this.task.title;
     pomodoroInputElem.value = this.task.estimatedPomodoros;
 
@@ -90,8 +96,12 @@ export default class EditTask {
   }
 
   delete() {
-    console.log("Close modal");
-    console.log("Delete task");
+    // remove from display
+    this.task.elem.remove();
+    // remove from task Manager
+    TaskManager.removeTaskById(this.task.id);
+    // close modal
+    this.hide();
   }
 
   addNote() {
@@ -116,12 +126,10 @@ export default class EditTask {
   }
 
   cancel() {
-    this.hide();
+    const editTask = this.elem;
 
-    const editTask = new EditTask();
-    document
-      .querySelector(".task-list")
-      .replaceChild(editTask.render(), this.elem);
+    // replace editTask display with task display
+    editTask.replaceWith(this.task.elem);
   }
 
   onClickHandler(event) {
