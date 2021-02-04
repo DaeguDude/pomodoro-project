@@ -4,10 +4,14 @@ import "./task.css";
 import CreateTask from "./createTask";
 
 class TaskSection {
-  constructor() {}
+  constructor() {
+    this.addTaskBtn = null;
+  }
 
   start() {
-    this.startAddTaskBtn();
+    document
+      .querySelector("#task-section")
+      .addEventListener("click", this.onClickHandler.bind(this));
   }
 
   render() {
@@ -30,14 +34,19 @@ class TaskSection {
     return result;
   }
 
-  startAddTaskBtn() {
-    const addTaskBtn = document.querySelector(".add-task-btn");
-    addTaskBtn.addEventListener("click", () => {
-      addTaskBtn.replaceWith(CreateTask.prototype.render());
-    });
+  onClickHandler(event) {
+    if (
+      event.target.className === "add-task-btn" ||
+      event.target.className === "fas fa-plus-circle"
+    ) {
+      this.showAddTaskBtn();
+    }
   }
 
-  onClickHandler() {}
+  showAddTaskBtn() {
+    const addTaskBtn = document.querySelector(".add-task-btn");
+    addTaskBtn.replaceWith(CreateTask.prototype.render());
+  }
 }
 
 const container = document.querySelector(".container");
