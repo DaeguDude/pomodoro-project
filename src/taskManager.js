@@ -6,6 +6,11 @@ class TaskManager {
     this.tasks = [];
   }
 
+  createTask(taskInfo) {
+    taskInfo.id = this.getNewTaskId();
+    return new Task(taskInfo);
+  }
+
   addTask(taskInfo) {
     taskInfo.id = this.getNewTaskId();
     const newTask = new Task(taskInfo);

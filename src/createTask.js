@@ -63,7 +63,8 @@ export default class CreateTask {
   }
 
   save() {
-    this.getTaskInfo();
+    const task = TaskManager.createTask(this.getTaskInfo());
+    // TaskManager.addTask(this.getTaskInfo());
     this.hide();
   }
 
@@ -133,7 +134,7 @@ export default class CreateTask {
       note = this.elem.querySelector('textarea[name="note"]').value;
     }
 
-    TaskManager.addTask({ title, estimatedPomodoros, note });
+    return { title, estimatedPomodoros, note };
   }
 }
 
