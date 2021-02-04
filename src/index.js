@@ -1,19 +1,17 @@
 // 페이지가 로딩이 되면, Task Section을 화면에 띄우고 클릭 이벤트에 등록을 하는 등 초기 세팅을 하자.
 import "./reset.css";
 import "./task.css";
-import AddTaskBtn from "./addTaskBtn.js";
+import CreateTask from "./createTask";
 
 class TaskSection {
   constructor() {}
 
   start() {
-    console.log(
-      "Start listening for events. If there is any tasks, display them"
-    );
+    this.startAddTaskBtn();
   }
 
   render() {
-    return document.createRange().createContextualFragment(`
+    const result = document.createRange().createContextualFragment(`
       <section id="task-section">
       <header>
         <h3>Tasks</h3>
@@ -28,15 +26,22 @@ class TaskSection {
       </button>
     </section>
     `);
+
+    return result;
   }
+
+  startAddTaskBtn() {
+    const addTaskBtn = document.querySelector(".add-task-btn");
+    addTaskBtn.addEventListener("click", () => {
+      addTaskBtn.replaceWith(CreateTask.prototype.render());
+    });
+  }
+
+  onClickHandler() {}
 }
 
 const container = document.querySelector(".container");
 const myTaskSection = new TaskSection();
 
 container.appendChild(myTaskSection.render());
-
-// // const taskList = document.querySelector(".task-list");
-// const taskSection = document.querySelector("#task-section");
-
-// taskSection.appendChild(AddTaskBtn.prototype.render());
+myTaskSection.start();
