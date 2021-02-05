@@ -118,15 +118,6 @@ function getSetting() {
   const longBreakInterval = document.querySelector(".longBreakInterval__number")
     .value;
 
-  console.log({
-    pomodoro,
-    shortBreak,
-    longBreak,
-    didAutoStart,
-    volume,
-    longBreakInterval,
-  });
-
   return {
     pomodoro,
     shortBreak,
@@ -143,9 +134,6 @@ function sendSettingValue() {
     .getElementsByClassName("footer__submit-btn")[0]
     .addEventListener("click", getSetting, false);
 }
-
-// const volumeRange = document.getElementById("volume__range");
-// const volumeDisplay = document.getElementById("volume__display");
 
 /* 반응형 volume input range 구현 */
 function responsiveVolumeValue() {
@@ -182,6 +170,13 @@ class Setting {
     sendSettingValue();
     responsiveVolumeValue();
   }
+
+  get() {
+    return getSetting();
+  }
 }
 
 export default Setting;
+
+// const volumeRange = document.getElementById("volume__range");
+// const volumeDisplay = document.getElementById("volume__display");

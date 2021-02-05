@@ -26,14 +26,14 @@ function createModalOpenButton() {
   const fragment = document
     .createRange()
     .createContextualFragment(modalOpenButton);
-  document.getElementById("body").appendChild(fragment);
+  document.querySelector("body").appendChild(fragment);
 }
 
 function createModalArticle() {
   const fragment = document
     .createRange()
     .createContextualFragment(modalArticle);
-  document.getElementById("body").appendChild(fragment);
+  document.querySelector("body").appendChild(fragment);
 }
 
 function addFooterArticle() {
@@ -42,11 +42,6 @@ function addFooterArticle() {
     .createContextualFragment(footerArticle);
   document.getElementById("modal-content").appendChild(fragment);
 }
-
-// const modal = document.querySelector(".modal");
-// const modalOpenBtn = document.getElementById("modal__open-btn");
-// const modalCloseBtn = document.getElementsByClassName("setting__remove-btn")[0];
-// const submitButton = document.getElementsByClassName("footer__submit-btn")[0];
 
 /* modal close 함수 */
 function closeModal() {
@@ -88,3 +83,8 @@ export {
   addFooterArticle,
   activateModal,
 };
+
+// const modal = document.querySelector(".modal");
+// const modalOpenBtn = document.getElementById("modal__open-btn");
+// const modalCloseBtn = document.getElementsByClassName("setting__remove-btn")[0];
+// const submitButton = document.getElementsByClassName("footer__submit-btn")[0];
