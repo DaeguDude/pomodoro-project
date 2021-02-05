@@ -10,12 +10,12 @@ function toggleLoginDropdown() {
 
 function getLoginBtn() {
     const loginBtn = document.createRange().createContextualFragment(`
-    <div>
+    <div class="profile-area">
         <button class="nav-btn" id="login-btn">
             <img src="${login}" alt="" class="mini-icon"><div>Login</div>
         </button>
         <div class="dropdown-container" id="login-dropdown">
-            <div class="dropdown-list" id="google-signin" data-onsuccess="onSignIn">
+            <div class="dropdown-list" id="google-signin">
                 <img src="${google}" alt="" class="dropdown-icon"><div>Login with Google</div>
             </div>
         </div>    
@@ -26,6 +26,9 @@ function getLoginBtn() {
     // document.querySelector(".dropdown-list").addEventListener("click", login());
 }
 
+function rmLoginBtn() {
+    const loginBtn = document.querySelector('.profile-area');
+    loginBtn.remove();
+}
 
-
-export { getLoginBtn };
+export { getLoginBtn , rmLoginBtn };
