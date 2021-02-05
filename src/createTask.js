@@ -1,5 +1,5 @@
 import TaskManager from "./taskManager";
-import taskViewController from "./taskViewController";
+import TaskViewController from "./taskViewController";
 
 const createTaskHtmlContent = `
     <article class="task-detail create-task">
@@ -64,7 +64,14 @@ export default class CreateTask {
 
   save() {
     const task = TaskManager.createTask(this.getTaskInfo());
-    // TaskManager.addTask(this.getTaskInfo());
+    TaskManager.addTask(task);
+    TaskViewController.addTask(task);
+    TaskViewController.addAddTaskBtn();
+
+    
+    console.log(TaskManager.getAllTasks())
+
+
     this.hide();
   }
 
