@@ -1,29 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://apis.google.com/js/api:client.js"></script>
-  <script>
-  var googleUser = {};
-  var startApp = function() {
-    gapi.load('auth2', function(){
-      auth2 = gapi.auth2.init({
-        client_id: '886700924848-jm5ejqtkomd15mh1uo08j0q2ou0kgqk4.apps.googleusercontent.com',
-        cookiepolicy: 'single_host_origin',
-      });
-      attachSignin(document.getElementById('google-signin'));
-    });
-  };
-
-  function attachSignin(element) {
-    console.log(element.id);
-    auth2.attachClickHandler(element, {},
-        function(googleUser) {
-          console.log(`Signed in: ${googleUser.getBasicProfile().getName()}`);
-        }, function(error) {
-          alert(JSON.stringify(error, undefined, 2));
-        });
-  }
-  </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Pomodoro</title>
@@ -37,16 +14,13 @@
         <!-- <button class="nav-btn setting-btn"><img src="./img/config-white.png" alt=""><div>Setting</div></button> -->
         <!-- <button class="nav-btn login-btn"><img src="./img/user-white.png" alt=""><div>Login</div></button> -->
         <!-- <div class="dropdown-menu profile-menu"><div class=""></div></div> -->
-       
       </nav>
-      
     </header>
 
-    <script>startApp();</script>
+   
 
     
 <script src="./dist/build.js"></script>
-<!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
 </body>
 </html>
