@@ -1,4 +1,5 @@
 import TaskManager from "./taskManager";
+import TaskViewController from './taskViewController'
 
 export default class EditTask {
   constructor(task) {
@@ -83,8 +84,8 @@ export default class EditTask {
   }
 
   save() {
-    TaskManager.modifyTask(this);
-    this.hide();
+    const modifiedTask = TaskManager.modifyTask(this.task, this.getTaskInfo());
+    TaskViewController.replace(this.elem, modifiedTask.render())
   }
 
   increment() {

@@ -65,13 +65,8 @@ export default class CreateTask {
   save() {
     const task = TaskManager.createTask(this.getTaskInfo());
     TaskManager.addTask(task);
-    TaskViewController.addTask(task);
-    TaskViewController.addAddTaskBtn();
-
-    
-    console.log(TaskManager.getAllTasks())
-
-
+    TaskViewController.showTask(task);
+    TaskViewController.showAddTaskBtn();
     this.hide();
   }
 
@@ -98,7 +93,7 @@ export default class CreateTask {
 
   cancel() {
     this.hide();
-    taskViewController.addAddTaskBtn();
+    TaskViewController.showAddTaskBtn();
   }
 
   onClickHandler(event) {

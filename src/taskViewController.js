@@ -1,22 +1,20 @@
 import AddTaskBtn from "./addTaskBtn";
-import EditTask from "./editTask";
 
 class TaskViewController {
   constructor() {}
 
-  addTask(task) {
+  showTask(task) {
     document.querySelector(".task-list").appendChild(task.render());
   }
 
-  addAddTaskBtn() {
+  showAddTaskBtn() {
     const taskSection = document.querySelector("#task-section");
     const addTaskBtn = new AddTaskBtn();
     taskSection.appendChild(addTaskBtn.render());
   }
-
-  showEditTask() {
-    const editTask = new EditTask();
-    editTask.render();
+  
+  replace(oldElem, newElem) {
+    oldElem.replaceWith(newElem);
   }
 }
 

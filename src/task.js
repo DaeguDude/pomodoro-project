@@ -1,4 +1,5 @@
 import EditTask from "./editTask";
+import TaskViewController from './taskViewController';
 
 export default class Task {
   constructor(TaskInfo) {
@@ -25,14 +26,9 @@ export default class Task {
   }
 
   openEditTask() {
-    console.log("editing");
-    console.log("render new edit k");
-
     const editTask = new EditTask(this);
     const renderedEditTask = editTask.render().querySelector(".edit-task");
-    console.log(renderedEditTask);
-    console.log(this.elem);
-    this.elem.replaceWith(renderedEditTask);
+    TaskViewController.replace(this.elem, renderedEditTask)
   }
 
   onClickHandler(event) {
@@ -76,7 +72,7 @@ export default class Task {
       .addEventListener("click", this.onClickHandler.bind(this));
 
     this.elem = result.querySelector(".task");
-    return result;
+    return this.elem;
   }
 
   hide() {

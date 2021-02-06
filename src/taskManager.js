@@ -43,16 +43,12 @@ class TaskManager {
     return this.tasks.map((task) => task.render());
   }
 
-  modifyTask(editTask) {
-    const taskInfo = editTask.getTaskInfo();
-    const task = editTask.task;
-    // Update all Info
+  modifyTask(task, taskInfo) {
     task.title = taskInfo.title;
     task.estimatedPomodoros = taskInfo.estimatedPomodoros;
     task.note = taskInfo.note;
 
-    // By rendering giving it new task elem
-    editTask.elem.replaceWith(task.render());
+    return task;
   }
 }
 

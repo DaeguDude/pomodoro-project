@@ -6,6 +6,7 @@ import CreateTask from "./createTask";
 class TaskSection {
   constructor() {
     this.addTaskBtn = null;
+    this.createTask = new CreateTask();
   }
 
   start() {
@@ -19,9 +20,11 @@ class TaskSection {
       <section id="task-section">
       <header>
         <h3>Tasks</h3>
-        <button class="edit-btn">
-          <i class="fas fa-ellipsis-v"></i>
-        </button>
+        <div>
+          <button class="edit-btn feature-btn">
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+        </div>
       </header>
 
       <ul class="task-list"></ul>
@@ -31,6 +34,8 @@ class TaskSection {
     </section>
     `);
 
+    // 태스크 리스트들이 있다면 `task-list`에 append해주고 rendering을 해주어야함
+
     return result;
   }
 
@@ -39,13 +44,13 @@ class TaskSection {
       event.target.className === "add-task-btn" ||
       event.target.className === "fas fa-plus-circle"
     ) {
-      this.showAddTaskBtn();
+      this.showCreateTask();
     }
   }
 
-  showAddTaskBtn() {
+  showCreateTask() {
     const addTaskBtn = document.querySelector(".add-task-btn");
-    addTaskBtn.replaceWith(CreateTask.prototype.render());
+    addTaskBtn.replaceWith(this.createTask.render());
   }
 }
 
