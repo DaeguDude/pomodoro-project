@@ -1,50 +1,45 @@
-import Profile from "../../img/user-black.png";
-import Subscription from "../../img/rocket-black.png";
-import Logout from "../../img/logout-black.png";
-import DeleteAcc from "../../img/delete-black.png";
+import profile from "../../img/user-black.png";
+import subscription from "../../img/rocket-black.png";
+import logout from "../../img/logout-black.png";
+import deleteAcc from "../../img/delete-black.png";
+import { signOut } from "../auth"
+
 
 const nav = document.querySelector('nav');
+
+
+function toggleProfileDropdown() {
+    document.querySelector('#profile-dropdown').classList.toggle("dropdown-show");
+    console.log("click");
+}
 
 //render profile button
 function getProfileBtn() {
     const profileBtn = document.createRange().createContextualFragment(`
-    <div class="profile-box">
-        <img src="" alt="">
-    </div>
+    <div class="profile-area">
+    <button class="nav-btn" id="profile-btn">
+        <img src="${profile}" alt="" class="mini-icon"><div></div>
+    </button>
+    <div class="dropdown-container" id="profile-dropdown">
+        <div class="dropdown-list" id="profile-menu">
+            <img src="${profile}" alt="" class="dropdown-icon"><div>Profile</div>
+        </div>
+        <div class="dropdown-list" id="subscription-menu">
+            <img src="${subscription}" alt="" class="dropdown-icon"><div>Subscription</div>
+        </div>
+        <div class="dropdown-list" id="google-logout">
+            <img src="${logout}" alt="" class="dropdown-icon"><div>Logout</div>
+        </div>
+        <div class="dropdown-list" id="delete-account">
+            <img src="${deleteAcc}" alt="" class="dropdown-icon"><div>DeleteAccount</div>
+        </div>
+    </div>    
+</div>
 `);
     nav.appendChild(profileBtn);
+    document.getElementById("profile-btn").addEventListener("click", toggleProfileDropdown);
+    document.getElementById("google-logout").addEventListener("click", signOut);
+
 }
-
-import login from '../../img/user-white.png';
-import google from '../../img/google-black.png';
-
-const nav = document.querySelector('nav');
-
-function toggleLoginDropdown() {
-    document.querySelector('#login-dropdown').classList.toggle("dropdown-show");
-    console.log("click");
-}
-
-function getProfileBtn() {
-    const profileBtn = document.createRange().createContextualFragment(`
-    <div class="profile-area">
-        <button class="nav-btn" id="login-btn">
-            <img src="${login}" alt="" class="mini-icon"><div>Login</div>
-        </button>
-        <div class="dropdown-container" id="login-dropdown">
-            <div class="dropdown-list" id="google-signin">
-                <img src="${google}" alt="" class="dropdown-icon"><div>Login with Google</div>
-            </div>
-        </div>    
-    </div>
-`);
-    nav.appendChild(loginBtn);
-    document.getElementById("login-btn").addEventListener("click", toggleLoginDropdown);
-}
-
-// function rmLoginBtn() {
-//     const loginBtn = document.querySelector('.profile-area');
-//     loginBtn.remove();
-// }
 
 export { getProfileBtn };
