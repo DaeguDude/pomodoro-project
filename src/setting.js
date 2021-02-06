@@ -164,7 +164,7 @@ class Setting {
   constructor() {}
 
   start() {
-    createModalOpenButton();
+    // createModalOpenButton();
     createModalArticle();
     addSettingArticle();
     addFooterArticle();

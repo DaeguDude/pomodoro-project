@@ -1,6 +1,7 @@
-import Setting from "./setting";
+import { renderHeader } from './share_navbar/navbar'
+import Setting from './setting'
 
+const mySetting = new Setting();
+renderHeader();
+mySetting.start();
 
-
-const pomodoroSetting = new Setting();
-pomodoroSetting.start();
