@@ -1,3 +1,5 @@
+import "./modal.css";
+
 const modalOpenButton = `<button type="button" id="modal__open-btn">
 <img src="../img/config-white.png" alt="config icon" class="btn-img" />
 &nbsp;Setting

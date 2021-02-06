@@ -5,6 +5,8 @@ import {
   activateModal,
 } from "./modal";
 
+import "./setting.css";
+
 const settingArticle = `<div class="setting">
 <header class="setting__header">
   <div>Timer Setting</div>
