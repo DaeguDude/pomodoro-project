@@ -1,6 +1,9 @@
 import gapi from 'googleAPI';
+import { refreshHeader } from './navbar';
 
 var googleUser = {};
+let googleUserImg;
+let isLoggedIn;
 var startApp = function() {
   gapi.load('auth2', function(){
     let auth2;
@@ -17,6 +20,9 @@ function attachSignin(element, auth2) {
   auth2.attachClickHandler(element, {},
       function(googleUser) {
         console.log(`Signed in: ${googleUser.getBasicProfile().getName()}`);
+        googleUserImg = googleUser.getBasicProfile().getImageUrl();
+        isLoggedIn = googleUser.isSignedIn();
+        refreshHeader();
       }, function(error) {
         alert(JSON.stringify(error, undefined, 2));
       });
@@ -29,4 +35,6 @@ function signOut() {
     });
   }
 
-export { startApp , googleUser , signOut}
+  
+
+export { startApp , signOut , isLoggedIn , googleUserImg }

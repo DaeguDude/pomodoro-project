@@ -2,8 +2,7 @@ import profile from "../../img/user-black.png";
 import subscription from "../../img/rocket-black.png";
 import logout from "../../img/logout-black.png";
 import deleteAcc from "../../img/delete-black.png";
-import { signOut } from "../auth"
-
+import { signOut , googleUserImg } from "../auth"
 
 const nav = document.querySelector('nav');
 
@@ -15,10 +14,11 @@ function toggleProfileDropdown() {
 
 //render profile button
 function getProfileBtn() {
+    console.log();
     const profileBtn = document.createRange().createContextualFragment(`
     <div class="profile-area">
     <button class="nav-btn" id="profile-btn">
-        <img src="${profile}" alt="" class="mini-icon"><div></div>
+        <img src="${googleUserImg}" alt="" class="mini-icon"><div></div>
     </button>
     <div class="dropdown-container" id="profile-dropdown">
         <div class="dropdown-list" id="profile-menu">
