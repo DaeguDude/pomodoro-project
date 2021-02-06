@@ -22,6 +22,18 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.(ttf|otf|eot|svg|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [{
+            loader: 'file-loader'
+        }]
+      },
+      {
+        test: /\.mp3$/,
+        use: [{
+            loader: 'file-loader'
+        }]
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         use: [
           {
@@ -29,7 +41,9 @@ module.exports = {
           },
         ]
       },
+      
     ],
   },
   
 };
+
