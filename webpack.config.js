@@ -1,20 +1,20 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
   output: {
     filename: 'build.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist/',
-
   },
   externalsType: 'script',
   externals: {
     googleAPI: ['https://apis.google.com/js/api:client.js', 'gapi'],
   },
-  mode: 'none',
+  mode: 'development',
   module: {
     rules: [
       {

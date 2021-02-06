@@ -10,7 +10,7 @@ function renderHeader() {
     getBrandLogo();
     getReportBtn();
     getSettingBtn();
-    // getLoginBtn();
+    getLoginBtn();
     getProfileBtn();
 }
 
