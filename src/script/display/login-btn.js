@@ -23,12 +23,11 @@ function getLoginBtn() {
 `);
     nav.appendChild(loginBtn);
     document.getElementById("login-btn").addEventListener("click", toggleLoginDropdown);
-    // document.querySelector(".dropdown-list").addEventListener("click", login());
 }
 
-function rmLoginBtn() {
-    const loginBtn = document.querySelector('.profile-area');
-    loginBtn.remove();
-}
+// function rmLoginBtn() {
+//     const loginBtn = document.querySelector('.profile-area');
+//     loginBtn.remove();
+// }
 
-export { getLoginBtn , rmLoginBtn };
+export { getLoginBtn };
