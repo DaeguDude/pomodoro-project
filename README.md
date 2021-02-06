@@ -1,15 +1,6 @@
-## :memo:포모도로 프로젝트
+# pomodoro-module
+pomodoro-module for jasmine project
 
-자스민 수업의 마지막 프로젝트로 포모도로 타이머를 만들 예정임. 
-
-## :fire:동기
-
-[포모도로 기법](https://en.wikipedia.org/wiki/Pomodoro_Technique) 은 타이머를 이용해서 25분간 집중해서 일을 하고 5분간 휴식을 하는 방법으로 일을 처리하기 위한 효율적인 방법으로 알려져 있다. 인터넷에 여러가지 포모도로 사이트들이 있지만 보통 대부분 유저에게 친근하지 않은 디자인이며, 그렇다고 하면 유료인 사이트가 대부분이기 때문에 우리만의 포모도로 웹 사이트를 만들기로 함
-
-## :hourglass:프로젝트 진행 상황
-
-노션 참고
-
-- ~2021/01/17 첫번째 클론 완성
-
-
+# How to build and run
+## 1. npm install
+## 2. npm run start
