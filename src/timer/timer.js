@@ -32,19 +32,13 @@ const Timer = () => {
         const pomodoroSettings = setting.get();
 
 
-        // pomodoroMin = pomodoroSettings.pomodoro;
-        // pomodoroSec = 0;
-        // shortBreakMin = pomodoroSettings.shortBreak;
-        // shortBreakSec = 0;
-        // longBreakMin = pomodoroSettings.longBreak;
-        // longBreakSec = 0;
+        pomodoroMin = pomodoroSettings.pomodoro;
+        pomodoroSec = 0;
+        shortBreakMin = pomodoroSettings.shortBreak;
+        shortBreakSec = 0;
+        longBreakMin = pomodoroSettings.longBreak;
+        longBreakSec = 0;
 
-        pomodoroMin = 0//pomodoroSettings.pomodoro;
-        pomodoroSec = 2//0;
-        shortBreakMin = 0//pomodoroSettings.shortBreak;
-        shortBreakSec = 1//0;
-        longBreakMin = 0//pomodoroSettings.longBreak;
-        longBreakSec = 3//0;
         autoStartNextRound = pomodoroSettings.didAutoStart;
         longBreakInterval = parseInt(pomodoroSettings.longBreakInterval);
         soundVolume = pomodoroSettings.volume;
