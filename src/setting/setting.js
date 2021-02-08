@@ -106,30 +106,11 @@ const settingArticle = `<div class="setting">
 </div>
 `;
 
-function getSetting() {
-  const pomodoro = document.querySelector(".time__pomodoro").value;
-  const shortBreak = document.querySelector(".time__shortBreak").value;
-  const longBreak = document.querySelector(".time__longBreak").value;
-  const didAutoStart = document.querySelector("#autoStart__checkBox").checked;
-  const volume = document.querySelector(".volume__range").value;
-  const longBreakInterval = document.querySelector(".longBreakInterval__number")
-    .value;
-
-  return {
-    pomodoro,
-    shortBreak,
-    longBreak,
-    didAutoStart,
-    volume,
-    longBreakInterval,
-  };
-}
-
 /* submit Btn 클릭 시 getSetting 함수 호출 */
-function sendSettingValue() {
+function saveSettingValue() {
   document
     .getElementsByClassName("footer__submit-btn")[0]
-    .addEventListener("click", getSetting, false);
+    .addEventListener("click", saveSetting, false);
 }
 
 /* 반응형 volume input range 구현 */
@@ -154,7 +135,29 @@ function addSettingArticle() {
     .createContextualFragment(settingArticle);
   document.getElementById("padding-area").appendChild(fragment);
 }
+const settings = {};
 
+function saveSetting() {
+  settings.pomodoro = document.querySelector(".time__pomodoro").value;
+  settings.shortBreak = document.querySelector(".time__shortBreak").value;
+  settings.longBreak = document.querySelector(".time__longBreak").value;
+  settings.didAutoStart = document.querySelector(
+    "#autoStart__checkBox"
+  ).checked;
+  settings.volume = document.querySelector(".volume__range").value;
+  settings.longBreakInterval = document.querySelector(
+    ".longBreakInterval__number"
+  ).value;
+
+  console.log(settings);
+  // const pomodoro = document.querySelector(".time__pomodoro").value;
+  // const shortBreak = document.querySelector(".time__shortBreak").value;
+  // const longBreak = document.querySelector(".time__longBreak").value;
+  // const didAutoStart = document.querySelector("#autoStart__checkBox").checked;
+  // const volume = document.querySelector(".volume__range").value;
+  // const longBreakInterval = document.querySelector(".longBreakInterval__number")
+  //   .value;
+}
 class Setting {
   constructor() {}
 
@@ -163,12 +166,12 @@ class Setting {
     addSettingArticle();
     addFooterArticle();
     activateModal();
-    sendSettingValue();
+    saveSettingValue();
     responsiveVolumeValue();
   }
 
-  get() {
-    return getSetting();
+  getSetting() {
+    return settings;
   }
 }
 

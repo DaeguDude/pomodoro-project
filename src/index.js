@@ -1,3 +1,6 @@
+import "./styles/reset.css";
+import "./styles/style.css";
+
 import { renderHeader } from "./share_navbar/navbar";
 import Setting from "./setting/setting";
 import TaskSection from "./taskSection/taskSection";
@@ -10,15 +13,15 @@ const mySetting = new Setting();
 renderHeader();
 mySetting.start();
 
-console.log(mode);
-console.log(timer);
+// console.log(mode);
+// console.log(timer);
 
-mode.setDefaultMode();
-mode.waitForMode();
-timer.waitForTimer();
-timer.listenSettings();
+// mode.setDefaultMode();
+// mode.waitForMode();
+// timer.waitForTimer();
+// timer.listenSettings();
 
-const container = document.querySelector(".container");
-console.log(container);
-container.appendChild(myTaskSection.render());
-myTaskSection.start();
+// const container = document.querySelector(".container");
+// console.log(container);
+// container.appendChild(myTaskSection.render());
+// myTaskSection.start();
