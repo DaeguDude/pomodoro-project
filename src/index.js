@@ -1,9 +1,10 @@
+
 import { renderHeader , startApp } from './share_navbar/navbar';
 import Setting from './setting/setting';
 import TaskSection from './taskSection/taskSection';
 
-import { mode } from './timer/timerSection';
-import { timer } from './timer/timerSection';
+import { mode } from "./timer/timerSection";
+import { timer } from "./timer/timerSection";
 
 const myTaskSection = new TaskSection();
 const mySetting = new Setting();
@@ -19,7 +20,7 @@ mode.waitForMode();
 timer.waitForTimer();
 timer.listenSettings();
 
-const container = document.querySelector('.container');
+const container = document.querySelector(".container");
 console.log(container);
-container.appendChild(myTaskSection.render())
-myTaskSection.start()
+container.appendChild(myTaskSection.render());
+myTaskSection.start();
