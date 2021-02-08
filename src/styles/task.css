@@ -14,12 +14,6 @@ button:active { transform: translateY(1px); }
 /****************************************
 Task Section
 ****************************************/
-.container {
-  height: 100vh;
-  padding-top: 30px;
-  background: rgb(219, 82, 77);
-}
-
 #task-section {
   width: 480px;
   margin: 0 auto;
