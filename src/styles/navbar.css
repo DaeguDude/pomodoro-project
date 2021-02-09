@@ -1,4 +1,4 @@
-header {
+.main-header {
     margin: 0 auto;
     width: 620px;
     height: 60px;
@@ -27,7 +27,7 @@ header {
     margin-right: 4px;
 }
 
-nav {
+.main-navbar {
     height: 32px;
     display: flex;
     align-items: center;
