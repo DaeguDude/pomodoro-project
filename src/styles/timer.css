@@ -13,21 +13,7 @@
 }
 
 
-body {
-  transition: all ease 1s 0s;
-  font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
-* {
-    text-align: center;
-}
-
-div > div {
-  font-size: 30px;
-}
-
-
-#mode > input[type=button] {
+#mode>input[type=button] {
   border: none;
   color: white;
   margin: 0px;
@@ -48,20 +34,21 @@ div > div {
 }
 
 
-#time > input[type=button] {
+#time>input[type=button] {
   cursor: pointer;
-    border: none;
-    margin: 20px 0px 0px;
-    padding: 0px 12px;
-    border-radius: 4px;
-    font-family: ArialRounded;
-    font-size: 22px;
-    height: 55px;
-    font-weight: bold;
-    width: 200px;
-    background-color: white;
-    transition: color 0.5s ease-in-out 0s;
-    outline: none;
+  border: none;
+  margin: 20px 0px 0px;
+  padding: 0px 12px;
+  border-radius: 4px;
+  font-family: ArialRounded;
+  font-size: 22px;
+  height: 55px;
+  font-weight: bold;
+  width: 200px;
+  background-color: white;
+  transition: color 0.5s ease-in-out 0s;
+  outline: none;
+  text-align: center;
 }
 
 #wrap {
@@ -70,9 +57,11 @@ div > div {
   border-radius: 6px;
   margin: 0 auto;
   max-width: 480px;
+  text-align: center;
+  font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-#time > h1 {
+#time>h1 {
   font-size: 120px;
   font-weight: bold;
   margin-top: 20px;
