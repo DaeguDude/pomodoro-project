@@ -1,0 +1,159 @@
+:root {
+  --main-bg-color: rgb(219, 82, 77);
+  --link-color: #e96d73;
+  --info-heading-color: #541c1f;
+  --info-text-color: #785e60;
+  --semi-bold: 600;
+  --bold: 700;
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1 {
+  font-size: 34px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h1, h2 {
+  color: var(--info-heading-color);
+  font-weight: var(--semi-bold);
+}
+
+strong {
+  font-weight: var(--bold);
+}
+
+/*
+  ========================================
+  link
+  ========================================
+*/
+
+a {
+  color: var(--link-color);
+  font-weight: var(--bold);
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+
+/*
+  ========================================
+  Main
+  ========================================
+*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--main-bg-color)
+}
+
+.nav {
+  min-height: 60px;
+  width: 620px;
+  border: 1px solid white;
+}
+
+.timer-section {
+  min-height: 375px;
+  width: 480px;
+  margin-top: 40px;
+  border: 1px solid white;
+}
+
+.task-section {
+  width: 480px;
+  min-height: 130px;
+  margin-top: 28px;
+  border: 1px solid white;
+}
+
+/* 
+=================================
+Pomodoro-Info Section
+=================================
+*/
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-section__title h1 {
+  width: 620px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+}
+
+.info-section__article h2 {
+  margin-top: 28.8px;
+  padding-bottom: 4px;
+}
+
+.info-section__article h2:after {
+  content: '';
+  display: block;
+  width: 24px;
+  padding-top: 8px;
+  border-bottom: 4px solid #f05b56;
+  opacity: 0.6;
+}
+
+.info-section__article p,
+.info-section__article ul {
+  font-size: 18px;
+}
+
+.info-section__article p,
+.info-section__article ol,
+.info-section__article ul {
+  margin: 18px 0;
+  color: var(--info-text-color);
+  line-height: 1.6em;
+}
+
+.info-section__article ol,
+.info-section__article ul {
+  padding-left: 24px;
+}
+
+.info-section__article li {
+  margin: 12px 0;
+}
+
+.info-section__article ul li:before {
+  color: hsl(357, 74%, 67%);
+  content: '\2022';
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.info-section__article {
+  width: 620px;
+}
+
+
+
+
+
+
+
+

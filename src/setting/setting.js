@@ -161,7 +161,9 @@ function addSettingArticle() {
 }
 
 class Setting {
-  constructor() {}
+  constructor() {
+    this.settingValues = {};
+  }
 
   start() {
     // createModalOpenButton();
@@ -174,7 +176,8 @@ class Setting {
   }
 
   get() {
-    return getSetting();
+    this.settingValues = getSetting();
+    console.log(this.settingValues);
   }
 }
 
