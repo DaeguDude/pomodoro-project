@@ -1,7 +1,7 @@
 import "./styles/reset.css";
 import "./styles/style.css";
 
-import { renderHeader } from "./share_navbar/navbar";
+import { renderHeader, startApp } from "./share_navbar/navbar";
 import Setting from "./setting/setting";
 import TaskSection from "./taskSection/taskSection";
 
@@ -10,6 +10,7 @@ import { timer } from "./timer/timerSection";
 
 const myTaskSection = new TaskSection();
 const mySetting = new Setting();
+startApp();
 renderHeader();
 mySetting.start();
 

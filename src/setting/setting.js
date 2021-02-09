@@ -21,7 +21,7 @@ const settingArticle = `<div class="setting">
           min="0"
           step="1"
           class="time__input time__pomodoro"
-          value="1"
+          value="25"
         />
       </div>
 
@@ -135,7 +135,14 @@ function addSettingArticle() {
     .createContextualFragment(settingArticle);
   document.getElementById("padding-area").appendChild(fragment);
 }
-const settings = {};
+const settings = {
+  pomodoro: 25,
+  shortBreak: 5,
+  longBreak: 15,
+  didAutoStart: false,
+  volume: 50,
+  longBreakInterval: 4,
+};
 
 function saveSetting() {
   settings.pomodoro = document.querySelector(".time__pomodoro").value;
