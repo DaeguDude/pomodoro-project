@@ -3,7 +3,6 @@ import { getReportBtn } from './display/report-btn'
 import { getSettingBtn } from './display/setting-btn'
 import { getLoginBtn } from './display/login-btn'
 import { getProfileBtn } from './display/profile-btn'
-import { isLoggedIn } from './auth'
 
 //render all buttons
 function renderHeader() {
