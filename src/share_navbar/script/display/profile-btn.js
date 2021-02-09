@@ -17,7 +17,7 @@ function getProfileBtn() {
     const profileBtn = document.createRange().createContextualFragment(`
     <div class="profile-area">
     <button class="nav-btn" id="profile-btn">
-        <img src="${googleUserImg}" alt="" class="mini-icon"><div></div>
+        <img src="${googleUserImg}" alt="" class="mini-profile">
     </button>
     <div class="dropdown-container" id="profile-dropdown">
         <div class="dropdown-list" id="profile-menu">
