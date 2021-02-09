@@ -101,10 +101,9 @@
     pointer-events: none;
     position: absolute;
     background-color: white;
-    transform: translateY(10px);
+    transform: translateY(10px) translateX(-112px);
     width: 200px;
-    right: 5px;
-  }
+}
 
 .dropdown-show {
     display: block;
