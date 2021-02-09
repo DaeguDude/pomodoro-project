@@ -12,6 +12,9 @@
   font-weight: bold;
 }
 
+.background-color-transition {
+  transition: all ease 1s 0s;
+}
 
 #mode>input[type=button] {
   border: none;
