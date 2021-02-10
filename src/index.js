@@ -1,3 +1,6 @@
+import './styles/reset.css';
+import './styles/style.css';
+import './styles/layout.css';
 
 import { renderHeader , startApp } from './share_navbar/navbar';
 import Setting from './setting/setting';
