@@ -1,14 +1,14 @@
-import logo from '../../img/icon-white.png';
+import logo from "../../img/icon-white.png";
 
-const brandLogo = document.querySelector('.logo');
+const brandLogo = document.querySelector(".logo");
 
 function getBrandLogo() {
-    const logoBox = document.createRange().createContextualFragment(`
-    <a href="/">
+  const logoBox = document.createRange().createContextualFragment(`
+    <a href="./">
         <img src="${logo}" alt="">Pomofocus
     </a>
 `);
-    brandLogo.appendChild(logoBox);
+  brandLogo.appendChild(logoBox);
 }
 
 export { getBrandLogo };
