@@ -1,6 +1,6 @@
 import { display } from "./display.js";
 import endSound from "./sounds/alertSound.mp3";
-import Setting from "../setting/setting";
+import Setting from "./setting";
 
 const Timer = () => {
   let mode;
@@ -30,7 +30,7 @@ const Timer = () => {
 
   const importSettings = () => {
     const setting = new Setting();
-    const pomodoroSettings = setting.getSetting();
+    const pomodoroSettings = setting.get();
 
     pomodoroMin = pomodoroSettings.pomodoro;
     pomodoroSec = 0;
@@ -88,7 +88,7 @@ const Timer = () => {
 
   const setThemeForPomoroMode = () => {
     const red = "rgb(219, 82, 77)";
-    document.body.style.backgroundColor = red;
+    document.querySelector(".container").style.backgroundColor = red;
     document
       .getElementById("time")
       .querySelectorAll("input[type=button]")[0].style.color = red;
@@ -100,7 +100,7 @@ const Timer = () => {
 
   const setThemeForShortMode = () => {
     const green = "rgb(70, 142, 145)";
-    document.body.style.backgroundColor = green;
+    document.querySelector(".container").style.backgroundColor = green;
     document
       .getElementById("time")
       .querySelectorAll("input[type=button]")[0].style.color = green;
@@ -108,7 +108,7 @@ const Timer = () => {
 
   const setThemeForLongMode = () => {
     const blue = "rgb(67, 126, 168)";
-    document.body.style.background = blue;
+    document.querySelector(".container").style.backgroundColor = blue;
     document
       .getElementById("time")
       .querySelectorAll("input[type=button]")[0].style.color = blue;
@@ -216,70 +216,9 @@ const Timer = () => {
       //Initialize pomodoroRunCnt
       pomodoroRunCnt = 0;
     }
-<<<<<<< .merge_file_uwyQy9
-
-    const setThemeForPomoroMode = () => {
-        const red = "rgb(219, 82, 77)";
-        document.querySelector('.container').style.backgroundColor = red;
-        document.getElementById('time').querySelectorAll('input[type=button]')[0].style.color = red;
-        document.getElementById('time').querySelectorAll('input[type=button]')[0].style.boxShadow = 'rgb(235 235 235) 0px 6px 0px';
-    }
-
-    const setThemeForShortMode = () => {
-        const green = "rgb(70, 142, 145)";
-        document.querySelector('.container').style.backgroundColor = green;
-        document.getElementById('time').querySelectorAll('input[type=button]')[0].style.color = green;
-    }
-
-    const setThemeForLongMode = () => {
-        const blue = "rgb(67, 126, 168)";
-        document.querySelector('.container').style.backgroundColor = blue;
-        document.getElementById('time').querySelectorAll('input[type=button]')[0].style.color = blue;
-    }
-
-    const numFormat = (num) => {
-        if (num < 10)
-            num = "0" + num;
-        return num;
-    }
-
-    const applyTime = () => {
-        //debugger;
-        if(mode == 'pomodoroMode') {
-            const timeString = numFormat(pomodoroMin) + ':' + numFormat(pomodoroSec);
-            document.getElementById('time').querySelector('h1').innerText = timeString;
-        }
-        else if(mode == 'shortMode') {
-            const timeString = numFormat(shortBreakMin) + ':' + numFormat(shortBreakSec);
-            document.getElementById('time').querySelector('h1').innerText = timeString;
-        }
-        else if(mode == 'longMode') {
-            const timeString = numFormat(longBreakMin) + ':' + numFormat(longBreakSec);
-            document.getElementById('time').querySelector('h1').innerText = timeString;
-        }
-    }
-
-    const waitForTimer = () => {
-        const btn = document.getElementById('time').querySelectorAll('input[type=button]');
-        btn.forEach((button) => {
-            button.addEventListener('click', () => {
-                debugStatus();
-                display.updateTimer(button);
-                Timer(button.value);
-            })
-        })
-    }
-
-    const Timer = (state) => {
-        if (state === 'START')
-            stopTimer();
-        else if (state === 'STOP')
-            timerId = setInterval(startTimer, 1000);
-=======
     if (!autoStartNextRound) {
       stopTimer();
       display.updateTimer(btnTimerState());
->>>>>>> .merge_file_ByAUk7
     }
   };
 

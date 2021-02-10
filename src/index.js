@@ -1,11 +1,7 @@
-<<<<<<< .merge_file_kIrDu5
-import './styles/reset.css';
-import './styles/style.css';
-import './styles/layout.css';
-=======
 import "./styles/reset.css";
 import "./styles/style.css";
->>>>>>> .merge_file_sfY4Aw
+
+import "./styles/layout.css";
 
 import { renderHeader, startApp } from "./share_navbar/navbar";
 import Setting from "./setting/setting";
