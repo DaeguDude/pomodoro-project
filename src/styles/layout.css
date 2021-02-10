@@ -69,21 +69,19 @@ a:visited {
 .nav {
   min-height: 60px;
   width: 620px;
-  border: 1px solid white;
 }
 
 .timer-section {
   min-height: 375px;
   width: 480px;
   margin-top: 40px;
-  border: 1px solid white;
 }
 
 .task-section {
   width: 480px;
   min-height: 130px;
   margin-top: 28px;
-  border: 1px solid white;
+  margin-bottom: 50px;
 }
 
 /* 

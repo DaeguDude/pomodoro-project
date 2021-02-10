@@ -17,6 +17,7 @@ Task Section
 #task-section {
   width: 480px;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 #task-section header {
