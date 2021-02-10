@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+.title__container {
+  max-width: 620px;
+  margin: auto;
+  padding: 0 12px;
+
+  margin-top: 30px;
+}
+
+.explanation__container {
+  max-width: 620px;
+  margin: auto;
+  padding: 0 12px;
+}
+
+.title__text {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.title__text {
+  font-size: 34px;
+}
+
+.title__text {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.article__header:after {
+  content: "";
+  display: block;
+  /* margin: 0 auto; */
+  width: 24px;
+  padding-top: 8px;
+  border-bottom: 4px solid #f05b56;
+  opacity: 0.6;
+}
+
+.features__list-ol ol::marker {
+  unicode-bidi: isolate;
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+  text-indent: 0px !important;
+  text-align: start !important;
+  text-align-last: start !important;
+}
+
+.features__list li::before {
+  color: hsl(357, 74%, 67%);
+  content: "\2022";
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.article__text > a {
+  text-decoration: none !important;
+  color: hsl(357, 74%, 67%);
+  font-weight: bold;
+}
+
+.article__text {
+  font-size: 18px;
+  line-height: 1.6em;
+  color: hsl(357, 12%, 42%);
+}
+
+.article__text {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.features_list-oi > li > strong,
+.features__list > li > strong {
+  font-weight: bold;
+}
+
+.title__text,
+.article__header {
+  color: hsl(357, 50%, 22%);
+
+  margin-top: 34px;
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  line-height: 1.4em;
+}
+
+.features__list {
+  font-size: 18px;
+  list-style: none;
+  -webkit-padding-start: 24px;
+}
+
+.features__list {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.features__list > li,
+.features_list-ol > li {
+  line-height: 1.6rem;
+  color: hsl(357, 12%, 42%);
+  margin: 12px 0px;
+}
+
+.features__list > li,
+.features_list-ol > li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.features_list-ol {
+  font-size: 16px;
+  -webkit-padding-start: 24px;
+}
+
+.features_list-ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.explanation__body {
+  margin: 0;
+  font-family: "ArialRounded", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-weight: 300;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
