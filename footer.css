@@ -29,7 +29,7 @@
   margin: 0px 4px;
 }
 
-.container {
+.footer__container {
   max-width: 620px;
   margin: auto;
   padding: 0 12px;
@@ -77,7 +77,7 @@
   color: hsl(357, 8%, 60%);
 }
 
-.container > a,
+.footer__container > a,
 .footer__snslink__ph > a {
   text-decoration: none !important;
   color: hsl(357, 74%, 67%);
