@@ -84,7 +84,6 @@ const Timer = () => {
     const setThemeForPomoroMode = () => {
         const red = "rgb(219, 82, 77)";
         document.querySelector('.container').style.backgroundColor = red;
-        console.log(document.querySelector('.container'))
         document.getElementById('time').querySelectorAll('input[type=button]')[0].style.color = red;
         document.getElementById('time').querySelectorAll('input[type=button]')[0].style.boxShadow = 'rgb(235 235 235) 0px 6px 0px';
     }
