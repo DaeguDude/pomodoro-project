@@ -77,9 +77,13 @@
   color: hsl(357, 8%, 60%);
 }
 
-.footer__container > a,
-.footer__snslink__ph > a {
+.footer__container > a {
   text-decoration: none !important;
   color: hsl(357, 74%, 67%);
+  font-weight: bold;
+}
+
+.footer__snslink__ph > a {
+  text-decoration: none !important;
   font-weight: bold;
 }

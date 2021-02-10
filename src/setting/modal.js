@@ -5,7 +5,7 @@ const modalArticle = `
 <div class="modal-content" id="modal-content">
   <div class="padding-area" id="padding-area">
     <img
-      src="../../dist/remove-black-sm.png"
+      src="./remove-black-sm.png"
       alt="remove icon"
       class="setting__remove-btn btn-img close"
     />
