@@ -1,7 +1,7 @@
 import "./styles/reset.css";
 import "./styles/style.css";
-
 import "./styles/layout.css";
+import "./styles/footer.css";
 
 import { renderHeader, startApp } from "./share_navbar/navbar";
 import Setting from "./setting/setting";
