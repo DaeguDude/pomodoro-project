@@ -1,9 +1,7 @@
-import './css/style.css';
-import "./css/modal.css";
-import "./css/setting.css";
+import "../styles/timer.css";
 
-export { mode } from './mode.js';
-export { timer } from './timer.js';
+export { mode } from "./mode.js";
+export { timer } from "./timer.js";
 // mode.setDefaultMode();
 
 // mode.waitForMode();

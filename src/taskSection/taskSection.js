@@ -1,5 +1,4 @@
-import "./reset.css";
-import "./task.css";
+import "../styles/task.css";
 import CreateTask from "./createTask";
 
 export default class TaskSection {
