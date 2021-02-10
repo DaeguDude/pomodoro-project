@@ -83,20 +83,21 @@ const Timer = () => {
 
     const setThemeForPomoroMode = () => {
         const red = "rgb(219, 82, 77)";
-        document.body.style.backgroundColor = red;
+        document.querySelector('.container').style.backgroundColor = red;
+        console.log(document.querySelector('.container'))
         document.getElementById('time').querySelectorAll('input[type=button]')[0].style.color = red;
         document.getElementById('time').querySelectorAll('input[type=button]')[0].style.boxShadow = 'rgb(235 235 235) 0px 6px 0px';
     }
 
     const setThemeForShortMode = () => {
         const green = "rgb(70, 142, 145)";
-        document.body.style.backgroundColor = green;
+        document.querySelector('.container').style.backgroundColor = green;
         document.getElementById('time').querySelectorAll('input[type=button]')[0].style.color = green;
     }
 
     const setThemeForLongMode = () => {
         const blue = "rgb(67, 126, 168)";
-        document.body.style.background = blue;
+        document.querySelector('.container').style.backgroundColor = blue;
         document.getElementById('time').querySelectorAll('input[type=button]')[0].style.color = blue;
     }
 
