@@ -1,10 +1,5 @@
 import "../styles/modal.css";
 
-const modalOpenButton = `<button type="button" id="modal__open-btn">
-<img src="../img/config-white.png" alt="config icon" class="btn-img" />
-&nbsp;Setting
-</button>`;
-
 const modalArticle = `
 <div class="modal">
 <div class="modal-content" id="modal-content">
@@ -18,18 +13,11 @@ const modalArticle = `
 </div>`;
 
 const footerArticle = `
-<div class="footer">
+<div class="footer_div">
   <footer>
     <button type="submit" class="footer__submit-btn">OK</button>
   </footer>
 </div>`;
-
-function createModalOpenButton() {
-  const fragment = document
-    .createRange()
-    .createContextualFragment(modalOpenButton);
-  document.querySelector("body").appendChild(fragment);
-}
 
 function createModalArticle() {
   const fragment = document
@@ -79,14 +67,4 @@ function activateModal() {
   );
 }
 
-export {
-  createModalOpenButton,
-  createModalArticle,
-  addFooterArticle,
-  activateModal,
-};
-
-// const modal = document.querySelector(".modal");
-// const modalOpenBtn = document.getElementById("modal__open-btn");
-// const modalCloseBtn = document.getElementsByClassName("setting__remove-btn")[0];
-// const submitButton = document.getElementsByClassName("footer__submit-btn")[0];
+export { createModalArticle, addFooterArticle, activateModal };

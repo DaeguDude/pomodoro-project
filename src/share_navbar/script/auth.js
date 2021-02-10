@@ -3,7 +3,6 @@ import { toggleOnNavbar , toggleOffNavbar } from './navbar';
 
 var googleUser = {};
 let googleUserImg;
-let isLoggedIn;
 
 var startApp = function() {
   gapi.load('auth2', function(){
@@ -22,7 +21,6 @@ function attachSignin(element, auth2) {
       function(googleUser) {
         console.log(`Signed in: ${googleUser.getBasicProfile().getName()}`);
         googleUserImg = googleUser.getBasicProfile().getImageUrl();
-        isLoggedIn = googleUser.isSignedIn();
         toggleOnNavbar();
       }, function(error) {
         alert(JSON.stringify(error, undefined, 2));
@@ -34,7 +32,8 @@ function signOut() {
   auth2.signOut().then(function () {
     toggleOffNavbar();
     console.log('User signed out.');
+    window.location.reload();
     });
   }
 
-export { startApp , signOut , isLoggedIn , googleUserImg }
+export { startApp , signOut , googleUserImg }

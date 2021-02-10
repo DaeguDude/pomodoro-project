@@ -1,9 +1,15 @@
-header {
+.header-section {
+    padding: 0px 12px;
+    margin: 0px auto;
+    width: 644px;
+    height: 60px;
+    border-bottom: 1px solid #b74c4c;
+}
+
+.main-header {
     margin: 0 auto;
     width: 620px;
     height: 60px;
-    padding: 20px;
-    border-bottom: 1px solid #b74c4c;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +33,7 @@ header {
     margin-right: 4px;
 }
 
-nav {
+.main-navbar {
     height: 32px;
     display: flex;
     align-items: center;
@@ -52,16 +58,20 @@ nav {
     width: 16px;
 }
 
-
 .nav-btn div {
     font-size: 13px;
     margin-left: 4px;
 }
 
+.profile-area {
+    display: relative;
+    right: 0px;
+}
 
-.profile-box {
+#profile-btn {
     width: 32px;
     margin-left: 8px;
+    padding: 0px;
     display: flex;
     border-radius: 4px;
     cursor: pointer;
@@ -71,9 +81,10 @@ nav {
     border: none;
     color: white;
     height: 100%;
+    min-width: 0;
 }
 
-.profile-box img {
+#profile-btn img {
     width: 28px;
     height: 28px;
     margin: auto;
@@ -90,10 +101,9 @@ nav {
     pointer-events: none;
     position: absolute;
     background-color: white;
-    transform: translateY(10px);
+    transform: translateY(10px) translateX(-112px);
     width: 200px;
-    right: 0px;
-  }
+}
 
 .dropdown-show {
     display: block;
@@ -106,9 +116,13 @@ nav {
       display: flex;
       align-items: center;
       padding: 10px 16px;
-      font-size: 14px;
       cursor: pointer;
       pointer-events: auto;
+}
+
+.dropdown-list div {
+    font-size: 14px;
+    font-weight: 300;
 }
 /* 
 .dropdown-list :hover {

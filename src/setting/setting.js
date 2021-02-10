@@ -1,9 +1,4 @@
-import {
-  createModalOpenButton,
-  createModalArticle,
-  addFooterArticle,
-  activateModal,
-} from "./modal";
+import { createModalArticle, addFooterArticle, activateModal } from "./modal";
 
 import "../styles/setting.css";
 
@@ -14,7 +9,7 @@ const settingArticle = `<div class="setting">
 <article>
   <div class="setting__items">
     <div class="time__title">
-      <span class="title">Time (minutes)</span>
+      <span class="title_span">Time (minutes)</span>
     </div>
     <div class="time__items">
       <div class="time__item">
@@ -59,9 +54,9 @@ const settingArticle = `<div class="setting">
   </div>
 
   <div class="setting__items">
-    <div class="content">
+    <div class="setting__content">
       <div class="autoStart__title">
-        <span class="title">Auto start next round?</span>
+        <span class="title_span">Auto start next round?</span>
       </div>
       <div>
         <input type="checkBox" id="autoStart__checkBox" name="" />
@@ -71,9 +66,9 @@ const settingArticle = `<div class="setting">
   </div>
 
   <div class="setting__items">
-    <div class="content">
+    <div class="setting__content">
       <div class="volume__title">
-        <span class="title">Sound Volume</span>
+        <span class="title_span">Sound Volume</span>
       </div>
       <div class="volume__content">
         <div class="volume__display"><span id="volume__display">50</span></div>
@@ -90,9 +85,9 @@ const settingArticle = `<div class="setting">
   </div>
 
   <div class="setting__items">
-    <div class="content">
+    <div class="setting__content">
       <div class="longBreakInterval__title">
-        <span class="title">Long Break Interval</span>
+        <span class="title_span">Long Break Interval</span>
       </div>
       <div>
         <input
@@ -166,7 +161,6 @@ class Setting {
   }
 
   start() {
-    // createModalOpenButton();
     createModalArticle();
     addSettingArticle();
     addFooterArticle();
@@ -182,6 +176,3 @@ class Setting {
 }
 
 export default Setting;
-
-// const volumeRange = document.getElementById("volume__range");
-// const volumeDisplay = document.getElementById("volume__display");
