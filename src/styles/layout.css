@@ -123,6 +123,10 @@ Pomodoro-Info Section
   line-height: 1.6em;
 }
 
+.info-section__article ol {
+  list-style: decimal;
+}
+
 .info-section__article ol,
 .info-section__article ul {
   padding-left: 24px;
